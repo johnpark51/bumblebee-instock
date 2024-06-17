@@ -8,7 +8,6 @@ function App() {
 
   return (
      <BrowserRouter>
-      <NavBar />
       <Routes>
         {routes.map((route) => <Route
           key={route.name}
