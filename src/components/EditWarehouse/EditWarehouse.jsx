@@ -5,7 +5,7 @@ function EditWarehouse() {
 		<form className="edit-warehouse">
 			<section>
                 <img className=""></img>
-				<h1 className="edit-warehouse__title">Edit Warehouse Component</h1>
+				<h1 className="edit-warehouse__title">Edit Warehouse</h1>
 				<div className="border"></div>
 			</section>
 			<section className="edit-warehouse__warehouse">
@@ -64,7 +64,7 @@ function EditWarehouse() {
 			</section>
 			<section>
 				<button>Cancel</button>
-				<button type="submit">Save</button>
+				<button className="button button__primary" type="submit">Save</button>
 			</section>
 		</form>
 	);

@@ -1,6 +1,11 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+
+.border {
+    border: 1px solid $;
+}
 
 .edit-warehouse {
     padding: 1rem;
