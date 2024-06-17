@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import routes from "@/router/index";
+import Header from "@/components/Header/Header";
 
 /* STYLES */
 import "./App.scss";
@@ -7,6 +8,7 @@ import "./App.scss";
 function App() {
 
   return (
+    <>
      <BrowserRouter>
       <Routes>
         {routes.map((route) => <Route
@@ -16,6 +18,7 @@ function App() {
         />)}
       </Routes>
     </BrowserRouter>
+    </>
   )
 }
 
