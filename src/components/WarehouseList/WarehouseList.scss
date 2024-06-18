@@ -28,6 +28,10 @@
   }
   &__header {
     text-transform: capitalize;
+    margin-bottom: 1rem;
+    @include tablet() {
+      margin: 0;
+    }
   }
   &__search {
     padding: 0.5rem 1rem;
