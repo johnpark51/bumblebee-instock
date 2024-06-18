@@ -1,7 +1,7 @@
 /* ROUTES */
 import WarehousePage from "@/pages/WarehousePage/WarehousePage";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
-import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetails";
+import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetailsPage";
 
 /* ROUTE CONFIG */
 const routes = [
