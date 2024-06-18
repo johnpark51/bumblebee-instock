@@ -12,9 +12,12 @@ function DeleteWarehouse({ open, onClose }) {
 
 	return (
 		<div onClick={onClose} className="overlay">
-			<form onClick={(e) => {
-                e.stopPropagation()
-            }} onSubmit={deleteWarehouse} className="delete-warehouse">
+			<form
+				onClick={(e) => {
+					e.stopPropagation();
+				}}
+				onSubmit={deleteWarehouse}
+				className="delete-warehouse">
 				<div className="delete-warehouse__top">
 					<h1 className="delete-warehouse__header">
 						Delete Washington warehouse?
@@ -25,7 +28,9 @@ function DeleteWarehouse({ open, onClose }) {
 					</p>
 				</div>
 				<div className="delete-warehouse__buttons">
-					<button onClick={onClose} className="delete-warehouse__button delete-warehouse__button--cancel">
+					<button
+						onClick={onClose}
+						className="delete-warehouse__button delete-warehouse__button--cancel">
 						Cancel
 					</button>
 					<button
