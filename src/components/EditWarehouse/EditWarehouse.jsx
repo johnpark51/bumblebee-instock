@@ -1,6 +1,6 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function EditWarehouse() {
 	const inputWarehouse = useRef();
@@ -9,8 +9,26 @@ function EditWarehouse() {
 	const inputCountry = useRef();
 	const inputContact = useRef();
 	const inputPosition = useRef();
-	const inputPhoneNumber = useRef();
+	const [phoneNumber, setPhoneNumber] = useState("");
 	const inputEmail = useRef();
+
+	const formatPhoneNumber = (phoneNumber) => {
+		const cleaned = ("" + phoneNumber).replace(/\D/g, "");
+		const match = cleaned.match(/^(\d{1,1})(\d{1,3})(\d{1,3})?(\d{1,4})?$/);
+		if (match) {
+			const part0 = match[1] ? "+" + match[1] : "";
+			const part1 = match[2] ? " (" + match[2] : "";
+			const part2 = match[3] ? ") " + match[3] : "";
+			const part3 = match[4] ? "-" + match[4] : "";
+			return [part0, part1, part2, part3].join("");
+		}
+		return phoneNumber;
+	};
+
+	const handleInputChange = (event) => {
+		const formattedPhoneNumber = formatPhoneNumber(event.target.value);
+		setPhoneNumber(formattedPhoneNumber);
+	};
 
 	return (
 		<form className="edit-warehouse">
@@ -74,7 +92,8 @@ function EditWarehouse() {
 						type="text"
 						placeholder="+1(647)504-0911"
 						name="phoneNumber"
-						ref={inputPhoneNumber}></input>
+						value={phoneNumber}
+						onChange={handleInputChange}></input>
 					<label className="edit-warehouse__subheader">Email</label>
 					<input
 						className="edit-warehouse__input"
