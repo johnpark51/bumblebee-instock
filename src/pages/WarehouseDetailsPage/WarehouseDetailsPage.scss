@@ -1,6 +1,8 @@
+@use "@/styles/partials/fonts" as *;
+@use "@/styles/partials/variables" as *;
 @use "@/styles/partials/mixins" as *;
 
-.warehousepage-main {
+.warehouse-details-main {
   position: absolute;
     width: 100%;
     top: 0;
@@ -9,3 +11,4 @@
     margin-top: 6rem;
   }
 }
+
