@@ -1,0 +1,140 @@
+@use "@/styles/partials/fonts" as *;
+@use "@/styles/partials/variables" as *;
+@use "@/styles/partials/mixins" as *;
+
+.warehouse-list {
+  width: 90%;
+  margin: auto;
+  background-color: $White;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    @include tablet() {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem 0 2rem;
+    }
+    &--right {
+      display: flex;
+      flex-direction: column;
+      @include tablet() {
+        flex-direction: row;
+      }
+    }
+  }
+  &__header {
+    text-transform: capitalize;
+  }
+  &__search {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: $White;
+    border: 1px solid $Cloud;
+    outline: none;
+    background-image: url("../../assets/Icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+    &:active {
+      border: 1px solid $Instock-Indigo;
+    }
+    &:focus {
+      border: 1px solid $Instock-Indigo;
+    }
+    @include tablet() {
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+  }
+  &__button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 50rem;
+    border-style: none;
+    background-color: $Instock-Indigo;
+    color: $White;
+    text-transform: capitalize;
+    font-family: Titillium;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    @include tablet() {
+      height: 2.5rem;
+      margin-top: 0;
+    }
+    &:hover {
+      background-color: $Graphite;
+    }
+  }
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon {
+    margin-left: 1rem;
+  }
+}
+
+.warehouse-filter {
+  display: none;
+  background-color: $Light-Grey;
+  @include tablet() {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: $Slate;
+    text-wrap: nowrap;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      color: $Instock-Indigo;
+    }
+    &--actions {
+      text-transform: uppercase;
+      color: $Slate;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      &:hover {
+        color: $Instock-Indigo;
+      }
+    }
+  }
+  &__container {
+    &--warehouse {
+      @include tablet() {
+        width: 20%
+      }
+    }
+    &--address {
+      @include tablet() {
+        width: 20%
+      }
+    }
+    &--contact-name {
+      @include tablet() {
+        width: 20%
+      }
+    }
+    &--contact-info {
+      @include tablet() {
+        width: 20%;
+      }
+    }
+    &--actions {
+      @include tablet() {
+        width: 20%;
+        text-align: right;
+      }
+    }
+  }
+}
+
