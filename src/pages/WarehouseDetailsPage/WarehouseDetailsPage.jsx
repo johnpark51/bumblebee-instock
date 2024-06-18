@@ -9,7 +9,7 @@ function WarehouseDetailsPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="warehouse-details-main">
         <WarehouseDetailsList />
       </main>
       <Footer />
