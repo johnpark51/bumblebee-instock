@@ -1,13 +1,21 @@
+/* STYLES */
 import "./WarehousePage.scss";
-import EditWarehouse from "../../components/EditWarehouse/EditWarehouse";
-import Header from "@/components/Header/Header";
 
-function WarehousePage() {
-	return (
-		<>
-			<Header />
-		</>
-	);
-}
+/* COMPONENTS */
+import Header from "@/components/Header/Header"
+import Footer from "@/components/Footer/Footer";
+import WarehouseList from "@/components/WarehouseList/WarehouseList";
+
+function WarehousePage () {
+  return (
+    <>
+      <Header/>
+      <main className="warehousepage-main">
+        <WarehouseList />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default WarehousePage;
