@@ -2,16 +2,24 @@
 @use "@/styles/partials/variables" as *;
 @use "@/styles/partials/mixins" as *;
 
-.warehouse-item {
+.warehouse-details-item {
   display: flex;
-  justify-content: space-between;
   padding: 1rem 1rem;
+  justify-content: space-between;
   align-items: center;
   border-top: 1px solid $Cloud;
   @include tablet() {
     padding: 1rem 2rem;
     border-bottom: 1px solid $Cloud;
     border-top: none;
+    gap: 0;
+  }
+  &__header-link {
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: $Graphite;
+    }
   }
   &__header {
     font-size: 0.688rem;
@@ -25,6 +33,7 @@
       color: $Instock-Indigo;
       font-size: 0.813rem;
       line-height: 1.25rem;
+      cursor: pointer;
     }
     &--tb {
       display: none;
@@ -106,9 +115,30 @@
       background-color: $Light-Grey;
     }
   }
+  &__pill {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    @include tablet () {
+      margin-top: 0;
+    }
+    &--is {
+      color: $Green;
+      background-color: rgba($color: $Green, $alpha: 0.07);
+    }
+    &--oos {
+      color: $Red;
+      background-color: rgba($color: $Red, $alpha: 0.07);
+    }
+  }
 }
 
-.warehouse-item-actions-mb {
+.warehouse-details-item-actions-mb {
   border-bottom: 1px solid $Cloud;
   display: flex;
   justify-content: space-between;

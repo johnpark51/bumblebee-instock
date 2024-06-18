@@ -10,7 +10,7 @@ function WarehousePage () {
   return (
     <>
       <Header/>
-      <main>
+      <main className="warehousepage-main">
         <WarehouseList />
       </main>
       <Footer />
