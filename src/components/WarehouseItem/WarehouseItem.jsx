@@ -5,6 +5,7 @@ import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 import DeleteWarehouse from "@/components/DeleteWarehouse/DeleteWarehouse";
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 function WarehouseItem() {
 	const [openModal, setOpenModal] = useState(false);
@@ -69,9 +70,9 @@ function WarehouseItem() {
 							alt="delete"
 						/>
 					</button>
-					<button className="warehouse-item__button">
+					<Link to={`/editwarehouse`}><button className="warehouse-item__button">
 						<img className="warehouse-item__icon" src={editIcon} alt="edit" />
-					</button>
+					</button></Link>
 				</div>
 			</article>
 			<div className="warehouse-item-actions-mb">
