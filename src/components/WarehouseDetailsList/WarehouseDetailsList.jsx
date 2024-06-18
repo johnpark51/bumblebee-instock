@@ -4,7 +4,7 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 import arrowBackIcon from "@/assets/Icons/arrow_back-24px.svg";
 
 /* COMPONENTS */
-import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
+import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/WarehouseDetailsListItem";
 import EditIcon from "@/components/Icons/EditIcon";
 
 function WarehouseDetailsList() {
@@ -57,7 +57,7 @@ function WarehouseDetailsList() {
         </div>
       </section>
 
-      <WarehouseItem />
+      <WarehouseDetailsListItem />
 
     </section>
     </>
