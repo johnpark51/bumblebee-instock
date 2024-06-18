@@ -1,5 +1,6 @@
 /* ROUTES */
 import WarehousePage from "@/pages/WarehousePage/WarehousePage";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
 /* ROUTE CONFIG */
 const routes = [
@@ -11,7 +12,7 @@ const routes = [
   {
     name: '404',
     path: '*',
-    component: WarehousePage
+    component: NotFoundPage
   }
 ];
 
