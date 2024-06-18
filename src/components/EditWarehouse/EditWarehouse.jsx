@@ -1,7 +1,17 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
+import { useRef } from "react";
 
 function EditWarehouse() {
+	const inputWarehouse = useRef();
+	const inputAddress = useRef();
+	const inputCity = useRef();
+	const inputCountry = useRef();
+	const inputContact = useRef();
+	const inputPosition = useRef();
+	const inputPhoneNumber = useRef();
+	const inputEmail = useRef();
+
 	return (
 		<form className="edit-warehouse">
 			<section className="edit-warehouse__top">
@@ -17,25 +27,29 @@ function EditWarehouse() {
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="Washington"
-						name="warehouseName"></input>
+						name="warehouseName"
+						ref={inputWarehouse}></input>
 					<label className="edit-warehouse__subheader">Street Address</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="33 Pearl Street SW"
-						name="streetAddress"></input>
+						name="streetAddress"
+						ref={inputAddress}></input>
 					<label className="edit-warehouse__subheader">City</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="Washington"
-						name="city"></input>
+						name="city"
+						ref={inputCity}></input>
 					<label className="edit-warehouse__subheader">Country</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="USA"
-						name="country"></input>
+						name="country"
+						ref={inputCountry}></input>
 				</section>
 				<div className="border border--middle"></div>
 				<section className="edit-warehouse__contact">
@@ -45,25 +59,29 @@ function EditWarehouse() {
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="Graeme Lyon"
-						name="contactName"></input>
+						name="contactName"
+						ref={inputContact}></input>
 					<label className="edit-warehouse__subheader">Position</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="Warehouse Manager"
-						name="position"></input>
+						name="position"
+						ref={inputPosition}></input>
 					<label className="edit-warehouse__subheader">Phone Number</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="+1(647)504-0911"
-						name="phoneNumber"></input>
+						name="phoneNumber"
+						ref={inputPhoneNumber}></input>
 					<label className="edit-warehouse__subheader">Email</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder="glyon@instock.com"
-						name="email"></input>
+						name="email"
+						ref={inputEmail}></input>
 				</section>
 			</section>
 			<section className="edit-warehouse__buttons">

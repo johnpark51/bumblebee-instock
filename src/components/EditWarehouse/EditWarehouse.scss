@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
 
 .border {
     border: 1px solid $Cloud;
@@ -19,6 +20,7 @@
     width: 93%;
     bottom: 3rem;
     border: 1px solid #13182c1b;
+    max-width: 1200px;
 
     &__top {
         padding: 0 1rem;
@@ -29,6 +31,7 @@
     &__bottom {
         @include tablet {
             display: flex;
+            padding: 1rem 0;
         }
     }
 
@@ -37,10 +40,20 @@
         @include tablet {
             border-right: 1px solid $Cloud;
         }
+        @include desktop {
+            padding: 0 1rem;
+        }
+    }
+
+    &__header {
+        margin: 0 0 2rem 0;
     }
 
     &__contact {
         padding: 1rem;
+        @include desktop {
+            padding: 0 1rem;
+        }
     }
 
     &__subheader {
@@ -82,10 +95,17 @@
             border: 1px solid $Cloud;
             color: $Slate;
             background-color: $White;
+            &:hover {
+                border: 1px solid $Instock-Indigo;
+                color: $Instock-Indigo;
+            }
         }
         &--submit {
             background-color: $Instock-Indigo;
             color: $White;
+            &:hover {
+                background-color: $Graphite;
+            }
         }
     }
 }
