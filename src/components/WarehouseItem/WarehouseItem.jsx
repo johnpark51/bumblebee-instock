@@ -5,6 +5,9 @@ import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 
 function WarehouseItem() {
+    // let [modalIsOpen, setModalIsOpen] = useState(false)
+    // onClick={() => setModalIsOpen(false)}
+
   return (
       <>
       <article className="warehouse-item">

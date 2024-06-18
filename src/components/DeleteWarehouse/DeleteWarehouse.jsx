@@ -1,10 +1,11 @@
 import "./DeleteWarehouse.scss";
 import axios from 'axios';
+import { useState } from "react";
 
 function DeleteWarehouse() {
     const deleteWarehouse = (event) => {
         event.preventDefault();
-        // axios.
+        axios.delete("http://localhost:8080/warehouses/1");
     }
 
 	return (

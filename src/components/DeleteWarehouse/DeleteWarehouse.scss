@@ -9,9 +9,11 @@
     width: 100%;
     height: 100%;
     padding: 3.5rem 1rem 2rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px 0px #13182C1A;
     @include tablet {
         padding: 3rem 5rem;
-        border: 1px solid $Cloud;
+        border: 1px solid #13182c1b;
         width: 85%;
         height: 17rem;
         margin: 0 auto;

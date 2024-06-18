@@ -7,6 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import DeleteWarehouse from "@/components/DeleteWarehouse/DeleteWarehouse";
 
 function EditWarehousePage() {
+
   return (
     <>
       <Header />
@@ -14,7 +15,7 @@ function EditWarehousePage() {
         <EditWarehouse />
         <DeleteWarehouse />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
