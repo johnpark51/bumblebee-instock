@@ -6,7 +6,6 @@ function WarehousePage() {
 	return (
 		<>
 			<Header />
-			<EditWarehouse />
 		</>
 	);
 }
