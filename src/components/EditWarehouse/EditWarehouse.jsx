@@ -1,6 +1,7 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
+import axios from "axios";
 
 function EditWarehouse() {
 	const inputWarehouse = useRef();
@@ -30,8 +31,23 @@ function EditWarehouse() {
 		setPhoneNumber(formattedPhoneNumber);
 	};
 
+	const putWarehouse = (event) => {
+		event.preventDefault();
+		const updatedWarehouse = {
+			warehouse_name: inputWarehouse.current.value,
+			address: inputAddress.current.value,
+			city: inputCity.current.value,
+			country: inputCountry.current.value,
+			contact_name: inputContact.current.value,
+			contact_position: inputPosition.current.value,
+			contact_phone: phoneNumber,
+			contact_email: inputEmail.current.value,
+		};
+		axios.put("http://localhost:8080/warehouses/1", updatedWarehouse);
+	};
+
 	return (
-		<form className="edit-warehouse">
+		<form onSubmit={putWarehouse} className="edit-warehouse">
 			<section className="edit-warehouse__top">
 				<img className="edit-warehouse__arrow" src={arrowLeft}></img>
 				<h1 className="edit-warehouse__title">Edit Warehouse</h1>
