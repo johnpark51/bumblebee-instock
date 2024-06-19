@@ -1,9 +1,15 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import useWarehouse from "@/utils/hooks/useWarehouse.js";
 import axios from "axios";
 
 function EditWarehouse() {
+
+  const { id } = useParams();
+  const navigation = useNavigate();
+  const { warehouse, error } = useWarehouse();
 	const inputWarehouse = useRef();
 	const inputAddress = useRef();
 	const inputCity = useRef();
@@ -43,13 +49,24 @@ function EditWarehouse() {
 			contact_phone: phoneNumber,
 			contact_email: inputEmail.current.value,
 		};
-		axios.put("http://localhost:8080/warehouses/1", updatedWarehouse);
+		axios.put(`http://localhost:8080/warehouses/${id}`, updatedWarehouse);
+    navigation("/");
 	};
 
+  function handleCancel(e) {
+    e.preventDefault();
+    navigation("/");
+  };
+
+  console.log(warehouse);
+
+  if (error) return <p>{error}</p>
+
+  if (warehouse)
 	return (
 		<form onSubmit={putWarehouse} className="edit-warehouse">
 			<section className="edit-warehouse__top">
-				<img className="edit-warehouse__arrow" src={arrowLeft}></img>
+				<Link to="/"><img className="edit-warehouse__arrow" src={arrowLeft}></img></Link>
 				<h1 className="edit-warehouse__title">Edit Warehouse</h1>
 			</section>
 			<div className="border"></div>
@@ -60,28 +77,28 @@ function EditWarehouse() {
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="Washington"
+						placeholder={warehouse.warehouse_name}
 						name="warehouseName"
 						ref={inputWarehouse}></input>
 					<label className="edit-warehouse__subheader">Street Address</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="33 Pearl Street SW"
+						placeholder={warehouse.address}
 						name="streetAddress"
 						ref={inputAddress}></input>
 					<label className="edit-warehouse__subheader">City</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="Washington"
+						placeholder={warehouse.city}
 						name="city"
 						ref={inputCity}></input>
 					<label className="edit-warehouse__subheader">Country</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="USA"
+						placeholder={warehouse.country}
 						name="country"
 						ref={inputCountry}></input>
 				</section>
@@ -92,21 +109,21 @@ function EditWarehouse() {
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="Graeme Lyon"
+						placeholder={warehouse.contact_name}
 						name="contactName"
 						ref={inputContact}></input>
 					<label className="edit-warehouse__subheader">Position</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="Warehouse Manager"
+						placeholder={warehouse.contact_position}
 						name="position"
 						ref={inputPosition}></input>
 					<label className="edit-warehouse__subheader">Phone Number</label>
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="+1(647)504-0911"
+						placeholder={warehouse.contact_phone}
 						name="phoneNumber"
 						value={phoneNumber}
 						onChange={handleInputChange}></input>
@@ -114,13 +131,15 @@ function EditWarehouse() {
 					<input
 						className="edit-warehouse__input"
 						type="text"
-						placeholder="glyon@instock.com"
+						placeholder={warehouse.contact_email}
 						name="email"
 						ref={inputEmail}></input>
 				</section>
 			</section>
 			<section className="edit-warehouse__buttons">
-				<button className="edit-warehouse__button edit-warehouse__button--cancel">
+				<button onClick={(e) => {
+          handleCancel(e)
+        }} className="edit-warehouse__button edit-warehouse__button--cancel">
 					Cancel
 				</button>
 				<button
@@ -130,7 +149,7 @@ function EditWarehouse() {
 				</button>
 			</section>
 		</form>
-	);
+	)
 }
 
 export default EditWarehouse;
