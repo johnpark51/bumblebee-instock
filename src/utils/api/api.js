@@ -34,6 +34,17 @@ class Api {
     };
   };
 
+  /* FETCH WAREHOUSE AND INVENTORIES */
+  async getWarehouseDetails(id) {
+    const route = `/warehouses/details/${id}`;
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      console.error(e);
+    };
+  };
+
 };
 
 const api = new Api(BASE_URL);
