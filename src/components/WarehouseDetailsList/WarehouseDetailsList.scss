@@ -8,17 +8,33 @@
   background-color: $White;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   border-radius: 3px;
+  margin-top: -4.25rem;
+
+  @include tablet {
+    margin-top: -5.525rem;
+  }
+
+  @include desktop {
+    max-width: 1050px;
+    margin-top: -6.525rem;
+  }
   &__top {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1.75rem 1rem;
     border-bottom: 1px solid $Cloud;
+
     @include tablet() {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem 1rem 2rem;
+      padding: 1.5rem 2rem 1.5rem 2rem;
     }
+
+    @include desktop {
+      padding: 2rem 2rem;
+    }
+
     &--left {
       display: flex;
       justify-content: space-between;

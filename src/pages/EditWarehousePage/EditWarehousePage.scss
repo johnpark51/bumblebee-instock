@@ -2,14 +2,8 @@
 @use "@/styles/partials/variables" as *;
 @use "@/styles/partials/mixins" as *;
 
-.delete-warehouse {
-	&__main {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		margin-top: 7.5rem;
-		@include tablet() {
-			margin-top: 5rem;
-		}
-	}
+.edit-warehouse__main {
+		display: flex;
+		justify-content: center;
 }
+

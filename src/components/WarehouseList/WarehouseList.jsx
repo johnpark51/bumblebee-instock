@@ -27,7 +27,7 @@ function WarehouseList () {
           <h1 className="warehouse-list__header">warehouses</h1>
         </div>
         <div className="warehouse-list__top--right">
-          <input className="warehouse-list__search" type="search" placeholder="search" />
+          <input className="warehouse-list__search" type="search" placeholder="Search..." />
           <button onClick={() => { handleAddWarehouse() }} role="link" className="warehouse-list__button">+ add new warehouse</button>
         </div>
       </div>
