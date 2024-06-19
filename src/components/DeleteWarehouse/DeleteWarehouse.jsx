@@ -1,10 +1,9 @@
 import "./DeleteWarehouse.scss";
 import axios from "axios";
-// import { }
 
 function DeleteWarehouse({ open, onClose, id, warehouse_name }) {
+
 	const deleteWarehouse = (event) => {
-		event.preventDefault();
 		axios.delete(`http://localhost:8080/warehouses/${id}`);
 	};
 
@@ -23,8 +22,8 @@ function DeleteWarehouse({ open, onClose, id, warehouse_name }) {
 						Delete {warehouse_name} warehouse?
 					</h1>
 					<p className="delete-warehouse__description">
-						Please confirm that you'd like to delete the {warehouse_name} from the
-						list of warehouses. You won't be able to undo this action.
+						Please confirm that you'd like to delete the {warehouse_name} warehouse from
+						the list of warehouses. You won't be able to undo this action.
 					</p>
 				</div>
 				<div className="delete-warehouse__buttons">
