@@ -1,0 +1,148 @@
+@use "@/styles/partials/fonts" as *;
+@use "@/styles/partials/variables" as *;
+@use "@/styles/partials/mixins" as *;
+
+.warehouse-details-item {
+  display: flex;
+  padding: 1rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $Cloud;
+  @include tablet() {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid $Cloud;
+    border-top: none;
+    gap: 0;
+  }
+  &__header-link {
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: $Graphite;
+    }
+  }
+  &__header {
+    font-size: 0.688rem;
+    color: $Slate;
+    line-height: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    &--mb {
+      display: flex;
+      align-items: center;
+      color: $Instock-Indigo;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      cursor: pointer;
+    }
+    &--tb {
+      display: none;
+      color: $Instock-Indigo;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      @include tablet() {
+        display: flex;
+      }
+    }
+  }
+  &__text {
+    font-size: 0.875rem;
+    color: $Instock-Black;
+    line-height: 1.375rem;
+    margin: 0;
+    &--tb {
+      display: none;
+      @include tablet() {
+        display: flex;
+      }
+    }
+  }
+  &__mb {
+    @include tablet() {
+      display: none;
+    }
+    @include desktop() {
+      display: none;
+    }
+  }
+  &__container {
+    &--warehouse {
+      @include tablet() {
+        width: 20%;
+      }
+    }
+    &--address {
+      display: none;
+      @include tablet() {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+      }
+    }
+    &--contact-name {
+      @include tablet() {
+        width: 20%;
+      }
+    }
+    &--contact-info {
+      display: none;
+      @include tablet() {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+      }
+    }
+    &--actions {
+      display: none;
+      @include tablet() {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 20%;
+      }
+    }
+  }
+  &__button {
+    background-color: transparent;
+    border-style: none;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      background-color: $Light-Grey;
+    }
+  }
+  &__pill {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    @include tablet() {
+      margin-top: 0;
+    }
+    &--is {
+      color: $Green;
+      background-color: rgba($color: $Green, $alpha: 0.07);
+    }
+    &--oos {
+      color: $Red;
+      background-color: rgba($color: $Red, $alpha: 0.07);
+    }
+  }
+}
+
+.warehouse-details-item-actions-mb {
+  border-bottom: 1px solid $Cloud;
+  display: flex;
+  justify-content: space-between;
+  @include tablet() {
+    display: none;
+  }
+}
