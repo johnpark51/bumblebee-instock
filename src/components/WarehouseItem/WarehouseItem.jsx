@@ -6,8 +6,11 @@ import "./WarehouseItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
+import DeleteWarehouse from "@/components/DeleteWarehouse/DeleteWarehouse";
+import { useState } from "react";
 
 function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country, contact_name, contact_phone, contact_email } }) {
+	const [openModal, setOpenModal] = useState(false);
 
   const navigation = useNavigate();
 
@@ -21,6 +24,7 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
 
   return (
       <>
+	  <DeleteWarehouse open={openModal} onClose={() => setOpenModal(false)}/>
       <article className="warehouse-item">
         <div className="warehouse-item__container--warehouse">
           <Link to={`/warehouse/${id}`} className="warehouse-item__header--tb"><h3 className="warehouse-item__header--tb">{warehouse_name} <img className="warehouse-item__icon" src={chevronIcon} alt="chevron" /></h3></Link>
@@ -57,6 +61,7 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
         <div className="warehouse-item__container--actions">
           <button onClick={() => {
             handleClickDelete(id)
+			      setOpenModal(true)
           }} className="warehouse-item__button"><img className="warehouse-item__icon" src={deleteIcon} alt="delete" /></button>
           <button onClick={() => {
             handleClickEdit(id)

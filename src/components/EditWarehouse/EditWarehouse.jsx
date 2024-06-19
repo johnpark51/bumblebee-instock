@@ -1,5 +1,5 @@
 import "./EditWarehouse.scss";
-import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
+import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
 import axios from "axios";
 
