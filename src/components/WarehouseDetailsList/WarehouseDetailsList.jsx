@@ -1,3 +1,6 @@
+/* LOGIC */
+import { Link } from "react-router-dom";
+
 /* STYLES */
 import "./WarehouseDetailsList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
@@ -7,13 +10,18 @@ import arrowBackIcon from "@/assets/Icons/arrow_back-24px.svg";
 import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/WarehouseDetailsListItem";
 import EditIcon from "@/components/Icons/EditIcon";
 
-function WarehouseDetailsList() {
+function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, country, contact_name, contact_position, contact_phone, contact_email, inventories } }) {
   return (
     <>
     <section className="warehouse-details-list">
       <div className="warehouse-details-list__top">
         <div className="warehouse-details-list__top--left">
-          <h1 className="warehouse-details-list__header"><img className="warehouse-details-list__arrow-back" src={arrowBackIcon} alt="arrow back" /> washington</h1>
+          <h1 className="warehouse-details-list__header">
+              <Link to="/">
+                <img className="warehouse-details-list__arrow-back" src={arrowBackIcon} alt="arrow back" />
+              </Link>
+              {warehouse_name}
+            </h1>
           <button className="warehouse-details-list__button"><EditIcon color='#FFFFFF'/> <span className="warehouse-details-list__button-text">Edit</span></button>
         </div>
       </div>
@@ -22,19 +30,19 @@ function WarehouseDetailsList() {
         <div className="warehouse-details-information__right">
           <div className="warehouse-details-information__item">
             <h4 className="warehouse-details-information__header">warehouse address:</h4>
-            <p className="warehouse-details-information__text">300 Pearl Street SW, Washington, USA</p>
+            <p className="warehouse-details-information__text">{address} {city}, {country}</p>
           </div>
         </div>
         <div className="warehouse-details-information__left">
           <div className="warehouse-details-information__item">
             <h4 className="warehouse-details-information__header">contact name:</h4>
-            <p className="warehouse-details-information__text">Graeme Lyon</p>
-            <p className="warehouse-details-information__text">Warehouse Manager</p>
+            <p className="warehouse-details-information__text">{contact_name}</p>
+            <p className="warehouse-details-information__text">{contact_position}</p>
           </div>
           <div className="warehouse-details-information__item">
             <h4 className="warehouse-details-information__header">contact information:</h4>
-            <p className="warehouse-details-information__text">+1 (647) 504-0911</p>
-            <p className="warehouse-details-information__text">glyon@instock.com</p>
+            <p className="warehouse-details-information__text">{contact_phone}</p>
+            <p className="warehouse-details-information__text">{contact_email}</p>
           </div>
         </div>
       </div>
@@ -57,7 +65,9 @@ function WarehouseDetailsList() {
         </div>
       </section>
 
-      <WarehouseDetailsListItem />
+      {inventories.map((item) => {
+          return  <WarehouseDetailsListItem key={item.id} item={item} />
+        })}
 
     </section>
     </>

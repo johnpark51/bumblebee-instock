@@ -1,3 +1,6 @@
+/* LOGIC */
+import useWarehouses from "@/utils/hooks/useWarehouses";
+
 /* STYLES */
 import "./WarehouseList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
@@ -6,6 +9,11 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
 
 function WarehouseList () {
+
+  const { warehouses, error } = useWarehouses();
+
+  if (error) return <p>{error}</p>
+
   return (
     <section className="warehouse-list">
       <div className="warehouse-list__top">
@@ -36,7 +44,9 @@ function WarehouseList () {
         </div>
       </section>
 
-      <WarehouseItem />
+      { warehouses && warehouses.map((warehouse) => {
+        return <WarehouseItem key={warehouse.id} warehouse={warehouse} />
+      })}
 
     </section>
   );
