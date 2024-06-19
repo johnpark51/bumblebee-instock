@@ -30,7 +30,7 @@ const routes = [
   },
   {
     name: 'Add Warehouse',
-    path: '/add',
+    path: '/warehouse/add',
     component: AddWarehousePage
   },
   {
