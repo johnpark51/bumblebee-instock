@@ -97,12 +97,11 @@
 .warehouse-filter {
   display: none;
   background-color: $Light-Grey;
+
   @include tablet() {
     display: flex;
     justify-content: space-between;
-    padding: 0 2rem;
-    // margin-top: 1rem;
-    height: 2.5rem;
+    padding: 0.75rem 2rem;
   }
   &__header {
     display: flex;

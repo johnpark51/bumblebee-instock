@@ -47,6 +47,10 @@
         flex-direction: row;
         width: 100%;
         justify-content: space-evenly;
+
+        @include tablet {
+            width: auto;
+        }
     }
 
     &__link {
@@ -61,11 +65,11 @@
         padding: 0 2rem;
 
         @include tablet {
-            padding: 0 0.25rem;
+            padding: 0 1rem;
         }
 
         @include desktop {
-            padding: 0 0.25rem;
+            padding: 0 1rem;
         }
 
         &:focus {
@@ -86,6 +90,10 @@
             justify-content: center;
             align-items: center;
             padding: 0 2.5rem;
+
+            @include tablet {
+                padding: 0 1rem;
+            }
         }
     }
 }
