@@ -1,6 +1,7 @@
 import "./AddWarehouse.scss";
 import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function AddWarehouse() {
@@ -51,7 +52,7 @@ function AddWarehouse() {
 		<section className="add">
 			<form onSubmit={putWarehouse} className="add-warehouse">
 				<section className="add-warehouse__top">
-					<img className="edit-warehouse__arrow" src={arrowLeft}></img>
+					<Link to="/"><img className="edit-warehouse__arrow" src={arrowLeft}></img></Link>
 					<h1 className="edit-warehouse__title">Add New Warehouse</h1>
 				</section>
 				<div className="border"></div>

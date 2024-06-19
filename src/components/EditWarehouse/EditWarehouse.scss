@@ -84,13 +84,15 @@
         border: 1px solid $Cloud;
         margin: 0.25rem 0;
         padding: 0 1rem;
+        outline: none;
+        transition: all 0.15s ease-in-out;
         @include tablet {
             height: 2.5rem;
             margin: 0.5rem 0;
         }
-
         &:focus {
-            outline: 2px solid $Instock-Indigo;
+            outline: none;
+            border: 1px solid $Instock-Indigo;
         }
     }
 
@@ -110,6 +112,8 @@
         height: 2.25rem;
         border-radius: 1.25rem;
         border: 0;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
         @include tablet {
             width: 10%;
             max-width: 4rem;

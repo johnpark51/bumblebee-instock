@@ -4,13 +4,14 @@
 
 .warehouse-list {
   width: 90%;
+  max-width: 1050px;
   margin: auto;
   background-color: $White;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   border-radius: 3px;
 
   @include desktop {
-    width: 82.5%;
+    width: 100%;
   }
   &__top {
     display: flex;

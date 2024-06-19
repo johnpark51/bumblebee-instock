@@ -12,42 +12,45 @@
     &__block {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        padding: 1rem 1rem 5.5rem 1rem;
-        width: 100%;
+        padding: 1rem 0rem 5.5rem 0rem;
+        width: 90%;
         max-width: 1280px;
     
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 2rem 7rem 2rem;
+            padding: 2rem 0rem 7rem 0rem;
         }
     
         @include desktop {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 6rem 8rem 6rem;
+            padding: 2rem 0rem 8rem 0rem;
+            max-width: 1050px;
         }
     }
 
     &__logo {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
 
         @include tablet {
             margin: 0;
-            padding: 0 1rem;
         }
     }
 
     &__nav {
         display: flex;
         flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
     }
 
     &__link {
-        width: 100px;
+        // width: 100px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -55,7 +58,7 @@
         border-radius: 1.125rem;
         color: $Cloud;
         text-decoration: none;
-        padding: 0 1rem;
+        padding: 0 2rem;
 
         @include tablet {
             padding: 0 0.25rem;
@@ -68,10 +71,21 @@
         &:focus {
             background-color: $Instock-Black;
             color: $White;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &:hover {
             text-decoration: underline;
+        }
+
+        &.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2.5rem;
         }
     }
 }

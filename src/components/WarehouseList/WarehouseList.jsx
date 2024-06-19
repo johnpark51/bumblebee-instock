@@ -1,5 +1,6 @@
 /* LOGIC */
 import useWarehouses from "@/utils/hooks/useWarehouses";
+import { useNavigate } from "react-router-dom";
 
 /* STYLES */
 import "./WarehouseList.scss";
@@ -10,7 +11,12 @@ import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
 
 function WarehouseList () {
 
+  const navigation = useNavigate();
   const { warehouses, error } = useWarehouses();
+
+  function handleAddWarehouse() {
+    navigation("/warehouse/add");
+  };
 
   if (error) return <p>{error}</p>
 
@@ -22,7 +28,7 @@ function WarehouseList () {
         </div>
         <div className="warehouse-list__top--right">
           <input className="warehouse-list__search" type="search" placeholder="search" />
-          <button className="warehouse-list__button">+ add new warehouse</button>
+          <button onClick={() => { handleAddWarehouse() }} role="link" className="warehouse-list__button">+ add new warehouse</button>
         </div>
       </div>
 
