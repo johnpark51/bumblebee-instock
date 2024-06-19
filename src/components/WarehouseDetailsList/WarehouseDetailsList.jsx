@@ -10,7 +10,7 @@ import arrowBackIcon from "@/assets/Icons/arrow_back-24px.svg";
 import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/WarehouseDetailsListItem";
 import EditIcon from "@/components/Icons/EditIcon";
 
-function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, country, contact_name, contact_position, contact_phone, contact_email } }) {
+function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, country, contact_name, contact_position, contact_phone, contact_email, inventories } }) {
   return (
     <>
     <section className="warehouse-details-list">
@@ -65,7 +65,9 @@ function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, 
         </div>
       </section>
 
-      <WarehouseDetailsListItem />
+      {inventories.map((item) => {
+          return  <WarehouseDetailsListItem key={item.id} item={item} />
+        })}
 
     </section>
     </>
