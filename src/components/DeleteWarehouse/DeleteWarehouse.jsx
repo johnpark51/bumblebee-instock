@@ -1,17 +1,17 @@
 import "./DeleteWarehouse.scss";
 import axios from "axios";
-import { useState } from "react";
+// import { }
 
-function DeleteWarehouse({ open, onClose }) {
+function DeleteWarehouse({ open, onClose, id, warehouse_name }) {
 	const deleteWarehouse = (event) => {
 		event.preventDefault();
-		axios.delete("http://localhost:8080/warehouses/1");
+		axios.delete(`http://localhost:8080/warehouses/${id}`);
 	};
 
 	if (!open) return null;
 
 	return (
-		<div onClick={onClose} className="overlay">
+		<div onSubmit={deleteWarehouse} onClick={onClose} className="overlay">
 			<form
 				onClick={(e) => {
 					e.stopPropagation();
@@ -20,10 +20,10 @@ function DeleteWarehouse({ open, onClose }) {
 				className="delete-warehouse">
 				<div className="delete-warehouse__top">
 					<h1 className="delete-warehouse__header">
-						Delete Washington warehouse?
+						Delete {warehouse_name} warehouse?
 					</h1>
 					<p className="delete-warehouse__description">
-						Please confirm that you'd like to delete the Washington from the
+						Please confirm that you'd like to delete the {warehouse_name} from the
 						list of warehouses. You won't be able to undo this action.
 					</p>
 				</div>
