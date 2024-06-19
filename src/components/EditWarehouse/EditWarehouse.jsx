@@ -1,13 +1,14 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import useWarehouse from "@/utils/hooks/useWarehouse.js";
 import axios from "axios";
 
 function EditWarehouse() {
 
   const { id } = useParams();
+  const navigation = useNavigate();
   const { warehouse, error } = useWarehouse();
 	const inputWarehouse = useRef();
 	const inputAddress = useRef();
@@ -49,7 +50,13 @@ function EditWarehouse() {
 			contact_email: inputEmail.current.value,
 		};
 		axios.put(`http://localhost:8080/warehouses/${id}`, updatedWarehouse);
+    navigation("/");
 	};
+
+  function handleCancel(e) {
+    e.preventDefault();
+    navigation("/");
+  };
 
   console.log(warehouse);
 
@@ -59,7 +66,7 @@ function EditWarehouse() {
 	return (
 		<form onSubmit={putWarehouse} className="edit-warehouse">
 			<section className="edit-warehouse__top">
-				<img className="edit-warehouse__arrow" src={arrowLeft}></img>
+				<Link to="/"><img className="edit-warehouse__arrow" src={arrowLeft}></img></Link>
 				<h1 className="edit-warehouse__title">Edit Warehouse</h1>
 			</section>
 			<div className="border"></div>
@@ -130,7 +137,9 @@ function EditWarehouse() {
 				</section>
 			</section>
 			<section className="edit-warehouse__buttons">
-				<button className="edit-warehouse__button edit-warehouse__button--cancel">
+				<button onClick={(e) => {
+          handleCancel(e)
+        }} className="edit-warehouse__button edit-warehouse__button--cancel">
 					Cancel
 				</button>
 				<button
