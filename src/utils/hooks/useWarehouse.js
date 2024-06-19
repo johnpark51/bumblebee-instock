@@ -14,7 +14,7 @@ function useWarehouse() {
   /* FETCH WAREHOUSE BY ID */
   async function getWarehouse(id) {
     try {
-      const warehouse = await api.getWarehouse(id);
+      const warehouse = await api.getWarehouseDetails(id);
       setWarehouse(warehouse);
     } catch (e) {
       setError(e.message);
