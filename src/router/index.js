@@ -5,38 +5,44 @@ import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetailsP
 import WarehouseInventoryPage from "@/pages/WarehouseInventoryPage/WarehouseInventoryPage";
 import AddWarehousePage from "@/pages/AddWarehousePage/AddWarehousePage";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
+import InventoryPage from "@/pages/InventoryPage/InventoryPage";
 
 /* ROUTE CONFIG */
 const routes = [
   {
-    name: 'Home',
-    path: '/',
-    component: WarehousePage
+    name: "Home",
+    path: "/",
+    component: WarehousePage,
   },
   {
-    name: 'Edit Warehouse',
-    path: '/warehouse/edit/:id',
-    component: EditWarehousePage
+    name: "Edit Warehouse",
+    path: "/warehouse/edit/:id",
+    component: EditWarehousePage,
   },
   {
-    name: 'Warehouse Details',
-    path: '/warehouse/:id',
-    component: WarehouseDetailsPage
+    name: "Warehouse Details",
+    path: "/warehouse/:id",
+    component: WarehouseDetailsPage,
   },
   {
-    name: 'Inventory',
-    path: '/details',
-    component: WarehouseInventoryPage
+    name: "Inventory",
+    path: "/details",
+    component: WarehouseInventoryPage,
   },
   {
-    name: 'Add Warehouse',
-    path: '/warehouse/add',
-    component: AddWarehousePage
+    name: "Add Warehouse",
+    path: "/warehouse/add",
+    component: AddWarehousePage,
   },
   {
-    name: '404',
-    path: '*',
-    component: NotFoundPage
+    name: "404",
+    path: "*",
+    component: NotFoundPage,
+  },
+  {
+    name: "InventoryList",
+    path: "/inventory",
+    component: InventoryPage,
   },
 ];
 
