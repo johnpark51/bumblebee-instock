@@ -23,6 +23,28 @@ class Api {
     };
   };
 
+  /* GET BY ID */
+  async getWarehouse(id) {
+    const route = `/warehouses/${id}`;
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      console.error(e);
+    };
+  };
+
+  /* FETCH WAREHOUSE AND INVENTORIES */
+  async getWarehouseDetails(id) {
+    const route = `/warehouses/details/${id}`;
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      console.error(e);
+    };
+  };
+
 };
 
 const api = new Api(BASE_URL);

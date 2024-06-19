@@ -1,10 +1,10 @@
 /* ROUTES */
 import WarehousePage from "@/pages/WarehousePage/WarehousePage";
 import EditWarehousePage from "../pages/EditWarehousePage/EditWarehousePage";
-import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
-import WarehouseInventoryPage from "@/pages/WarehouseInventoryPage/WarehouseInventoryPage";
 import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import WarehouseInventoryPage from "@/pages/WarehouseInventoryPage/WarehouseInventoryPage";
 import AddWarehousePage from "@/pages/AddWarehousePage/AddWarehousePage";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
 /* ROUTE CONFIG */
 const routes = [
@@ -15,18 +15,13 @@ const routes = [
   },
   {
     name: 'Edit Warehouse',
-    path: '/editwarehouse',
+    path: '/warehouse/edit/:id',
     component: EditWarehousePage
   },
   {
-    name: 'WarehouseDetails',
-    path: '/warehouse/details',
+    name: 'Warehouse Details',
+    path: '/warehouse/:id',
     component: WarehouseDetailsPage
-  },
-  {
-    name: '404',
-    path: '*',
-    component: NotFoundPage
   },
   {
     name: 'Inventory',
@@ -37,7 +32,12 @@ const routes = [
     name: 'Add Warehouse',
     path: '/add',
     component: AddWarehousePage
-  }
+  },
+  {
+    name: '404',
+    path: '*',
+    component: NotFoundPage
+  },
 ];
 
 export default routes;
