@@ -19,10 +19,7 @@ html {
         background-color: $White;
         min-width: 90%;
         border-radius: 4px;
-        z-index: 100;
-        position: absolute;
-        top: 0;
-        margin-top: 110px;
+        margin-top: -50px;
         box-shadow: 0px 2px 5px 0px #13182C1A;
 
         @include tablet {

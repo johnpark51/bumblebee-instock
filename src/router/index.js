@@ -3,6 +3,7 @@ import WarehousePage from "@/pages/WarehousePage/WarehousePage";
 import EditWarehousePage from "../pages/EditWarehousePage/EditWarehousePage";
 import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import WarehouseInventoryPage from "@/pages/WarehouseInventoryPage/WarehouseInventoryPage";
+import AddWarehousePage from "@/pages/AddWarehousePage/AddWarehousePage";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
 /* ROUTE CONFIG */
@@ -26,6 +27,11 @@ const routes = [
     name: 'Inventory',
     path: '/details',
     component: WarehouseInventoryPage
+  },
+  {
+    name: 'Add Warehouse',
+    path: '/add',
+    component: AddWarehousePage
   },
   {
     name: '404',
