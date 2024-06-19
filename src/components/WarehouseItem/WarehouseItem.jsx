@@ -61,7 +61,7 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
         <div className="warehouse-item__container--actions">
           <button onClick={() => {
             handleClickDelete(id)
-			setOpenModal(true)
+			      setOpenModal(true)
           }} className="warehouse-item__button"><img className="warehouse-item__icon" src={deleteIcon} alt="delete" /></button>
           <button onClick={() => {
             handleClickEdit(id)
