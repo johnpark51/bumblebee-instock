@@ -18,13 +18,9 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
     navigation(`/warehouse/edit/${id}`)
   };
 
-  function handleClickDelete(id) {
-    navigation(`/warehouse/delete/${id}`);
-  };
-
   return (
       <>
-	  <DeleteWarehouse open={openModal} onClose={() => setOpenModal(false)}/>
+	    <DeleteWarehouse id={id} warehouse_name={warehouse_name} open={openModal} onClose={() => setOpenModal(false)}/>
       <article className="warehouse-item">
         <div className="warehouse-item__container--warehouse">
           <Link to={`/warehouse/${id}`} className="warehouse-item__header--tb"><h3 className="warehouse-item__header--tb">{warehouse_name} <img className="warehouse-item__icon" src={chevronIcon} alt="chevron" /></h3></Link>
@@ -60,7 +56,6 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
         </div>
         <div className="warehouse-item__container--actions">
           <button onClick={() => {
-            handleClickDelete(id)
 			      setOpenModal(true)
           }} className="warehouse-item__button"><img className="warehouse-item__icon" src={deleteIcon} alt="delete" /></button>
           <button onClick={() => {
@@ -70,7 +65,7 @@ function WarehouseItem({ warehouse: { id, warehouse_name, address, city, country
       </article>
       <div className="warehouse-item-actions-mb">
         <button onClick={() => {
-          handleClickDelete(id)
+          setOpenModal(true)
         }} className="warehouse-item__button"><img className="warehouse-item__icon" src={deleteIcon} alt="delete" /></button>
         <button onClick={() => {
           handleClickEdit(id)
