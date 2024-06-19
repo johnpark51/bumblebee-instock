@@ -58,8 +58,6 @@ function EditWarehouse() {
     navigation("/");
   };
 
-  console.log(warehouse);
-
   if (error) return <p>{error}</p>
 
   if (warehouse)
