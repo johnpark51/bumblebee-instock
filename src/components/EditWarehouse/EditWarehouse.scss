@@ -16,18 +16,26 @@
 .edit-warehouse {
     background-color: $White;
     border-radius: 4px;
-    margin: 0 auto;
+    margin-top: -3.75rem;
     width: 90%;
     max-width: 1050px;
     border: 1px solid #13182c1b;
     box-shadow: 0px 2px 5px 0px #13182C1A;
 
+    @include tablet {
+        margin-top: -5.625rem;
+    }
+
+    @include desktop {
+        // width: 95%;
+    }
+
     &__top {
-        padding: 1rem;
+        padding: 1.5rem;
         display: flex;
         gap: 0.3rem;
         @include tablet {
-            padding: 1.44rem;
+            padding: 1.5rem;
         }
     }
 
@@ -69,9 +77,6 @@
         }
     }
 
-    &__subheader {
-    }
-
     &__input {
         width: 100%;
         height: 2.25rem;
@@ -91,7 +96,6 @@
 
     &__buttons {
         padding: 1rem;
-        // background-color:$Light-Grey;
         background-color: rgba(247,248,249,.5);
         display: flex;
         justify-content: space-between;

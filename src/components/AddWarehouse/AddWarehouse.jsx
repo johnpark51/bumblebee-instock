@@ -2,7 +2,6 @@ import "./AddWarehouse.scss";
 import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
 import axios from "axios";
-// import add from '../../assets/Icons/'
 
 function AddWarehouse() {
 	const inputWarehouse = useRef();
@@ -50,8 +49,8 @@ function AddWarehouse() {
 	return (
 		<>
 		<section className="add">
-			<form onSubmit={putWarehouse} className="edit-warehouse">
-				<section className="edit-warehouse__top">
+			<form onSubmit={putWarehouse} className="add-warehouse">
+				<section className="add-warehouse__top">
 					<img className="edit-warehouse__arrow" src={arrowLeft}></img>
 					<h1 className="edit-warehouse__title">Add New Warehouse</h1>
 				</section>

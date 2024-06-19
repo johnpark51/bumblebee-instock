@@ -18,7 +18,7 @@
     }
 }
 
-.edit-warehouse {
+.add-warehouse {
     background-color: $White;
     border-radius: 4px;
     margin: 0 auto;
@@ -33,7 +33,7 @@
         display: flex;
         gap: 0.3rem;
         @include tablet {
-            padding: 1.44rem;
+            padding: 2rem;
         }
     }
 

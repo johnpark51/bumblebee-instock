@@ -8,16 +8,26 @@
   background-color: $White;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   border-radius: 3px;
+
+  @include desktop {
+    width: 82.5%;
+  }
   &__top {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+
     @include tablet() {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem 0 2rem;
+      padding: 1.75rem 2rem;
     }
+
+    @include desktop {
+      padding: 2rem 2rem;
+    }
+
     &--right {
       display: flex;
       flex-direction: column;
@@ -28,7 +38,7 @@
   }
   &__header {
     text-transform: capitalize;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     @include tablet() {
       margin: 0;
     }
@@ -90,7 +100,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2rem;
-    margin-top: 1rem;
+    // margin-top: 1rem;
     height: 2.5rem;
   }
   &__header {
