@@ -1,5 +1,5 @@
 /* LOGIC */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* STYLES */
 import "./WarehouseDetailsList.scss";
@@ -11,6 +11,13 @@ import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/Ware
 import EditIcon from "@/components/Icons/EditIcon";
 
 function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, country, contact_name, contact_position, contact_phone, contact_email, inventories } }) {
+
+  const navigation = useNavigate();
+
+  function handleEdit() {
+    navigation(`/warehouse/edit/${id}`)
+  };
+
   return (
     <>
     <section className="warehouse-details-list">
@@ -22,7 +29,7 @@ function WarehouseDetailsList({ warehouse: { id, warehouse_name, address, city, 
               </Link>
               {warehouse_name}
             </h1>
-          <button className="warehouse-details-list__button"><EditIcon color='#FFFFFF'/> <span className="warehouse-details-list__button-text">Edit</span></button>
+          <button onClick={() => { handleEdit() }} className="warehouse-details-list__button"><EditIcon color='#FFFFFF'/> <span className="warehouse-details-list__button-text">Edit</span></button>
         </div>
       </div>
 
