@@ -1,4 +1,5 @@
 import "@/pages/InventoryDetailsPage/InventoryDetailsPage.scss";
+import useInventory from "@/utils/hooks/useInventory";
 
 /* COMPONENTS */
 import Header from "@/components/Header/Header";

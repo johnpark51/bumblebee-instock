@@ -9,7 +9,7 @@ function InventoryDetails() {
     // const navigation = useNavigate();
 
     // function handleEdit() {
-    //   navigation(`/warehouse/edit/${id}`)
+    //   navigation(`/inventory/edit/${id}`)
     // };
     //need to destructure id from inventory list before you can use this
 
