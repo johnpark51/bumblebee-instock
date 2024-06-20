@@ -1,5 +1,5 @@
 //Logical
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /* STYLES */
 import "./InventoryItem.scss";
@@ -16,8 +16,13 @@ function InventoryItem({
     item_name,
     category,
     description,
+    warehouse_id,
   },
 }) {
+  const navigation = useNavigate();
+  const handleEdit = () => {
+    navigation(`/inventory/edit/${id}`, { state: { warehouse_id } });
+  };
   return (
     <>
       <article className="inventory-details-item">
@@ -99,7 +104,13 @@ function InventoryItem({
             />
           </button>
           <button className="inventory-details-item__button">
-            <img className="inventory-item__icon" src={editIcon} alt="edit" />
+            <img
+              onClick={handleEdit}
+              role="link"
+              className="inventory-item__icon"
+              src={editIcon}
+              alt="edit"
+            />
           </button>
         </div>
       </article>
@@ -107,7 +118,11 @@ function InventoryItem({
         <button className="inventory-details-item__button">
           <img className="inventory-item__icon" src={deleteIcon} alt="delete" />
         </button>
-        <button className="inventory-details-item__button">
+        <button
+          onClick={handleEdit}
+          className="inventory-details-item__button"
+          role="link"
+        >
           <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>
