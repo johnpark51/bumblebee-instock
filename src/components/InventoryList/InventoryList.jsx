@@ -13,6 +13,7 @@ function InventoryList({}) {
   const navigation = useNavigate();
   const { inventories, error } = useInventories();
 
+  console.log(inventories);
   function handleAddWarehouse() {
     navigation("/inventories/add");
   }
@@ -101,12 +102,11 @@ function InventoryList({}) {
             </h4>
           </div>
         </section>
-        <div className="inventory-details-list__item">
-          <InventoryItem />
-
-          {/* {inventories.map((item) => { */}
-          {/*   return <inventoryItem key={item.id} item={item} />; */}
-          {/* })} */}
+        <div className="growth">
+          {inventories &&
+            inventories.map((item) => {
+              return <InventoryItem key={item.id} item={item} />;
+            })}
         </div>
       </section>
     </>
