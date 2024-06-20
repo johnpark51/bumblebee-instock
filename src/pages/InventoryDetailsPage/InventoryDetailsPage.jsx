@@ -1,4 +1,4 @@
-import "@/pages/EditWarehousePage/InventoryDetailsPage.scss";
+import "@/pages/InventoryDetailsPage/InventoryDetailsPage.scss";
 
 /* COMPONENTS */
 import Header from "@/components/Header/Header";
