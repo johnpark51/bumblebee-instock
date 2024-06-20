@@ -7,11 +7,16 @@ import InventoryDetails from "@/components/InventoryDetails/InventoryDetails"
 import Footer from "@/components/Footer/Footer";
 
 function InventoryDetailsPage() {
+	const { inventory, error } = useInventory();
+	console.log(inventory)
+
+	if (error) return <p>{error}</p>
+
 	return (
 		<>
 			<Header />
 			<main className="inventory-details__main">
-				<InventoryDetails />
+				{inventory && <InventoryDetails inventory={inventory}/>}
 			</main>
 			<Footer />
 		</>

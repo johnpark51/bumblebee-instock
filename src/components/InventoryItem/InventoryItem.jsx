@@ -8,28 +8,27 @@ import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 
 function InventoryItem({
-  item: {
+  inventory: {
     id,
     warehouse_name,
     status,
     quantity,
     item_name,
     category,
-    description,
   },
 }) {
   return (
     <>
       <article className="inventory-details-item">
         <div className="inventory-details-item__container--inventory">
-          <h3 className="inventory-details-item__header--tb inventory-details-item__header-link">
+        <Link to={`/inventory/${id}`}><h3 className="inventory-details-item__header--tb inventory-details-item__header-link">
             {item_name}{" "}
             <img
               className="inventory-item__icon"
               src={chevronIcon}
               alt="chevron"
             />
-          </h3>
+          </h3></Link>
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">inventory item</h4>
             <h3 className="inventory-details-item__header--mb inventory-details-item__header-link">

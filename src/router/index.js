@@ -54,7 +54,7 @@ const routes = [
   },
   {
     name: 'Inventory Details',
-    path: '/inventory/details',
+    path: '/inventory/:id',
     component: InventoryDetailsPage
   },
   {

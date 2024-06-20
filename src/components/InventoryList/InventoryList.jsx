@@ -1,6 +1,6 @@
 /* LOGIC */
 import useInventories from "@/utils/hooks/useInventories";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* STYLES */
 import "./InventoryList.scss";
@@ -9,11 +9,10 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 /* COMPONENTS */
 import InventoryItem from "@/components/InventoryItem/InventoryItem";
 
-function InventoryList({}) {
+function InventoryList() {
   const navigation = useNavigate();
   const { inventories, error } = useInventories();
 
-  console.log(inventories);
   function handleAddWarehouse() {
     navigation("/inventories/add");
   }
@@ -104,8 +103,8 @@ function InventoryList({}) {
         </section>
         <div className="growth">
           {inventories &&
-            inventories.map((item) => {
-              return <InventoryItem key={item.id} item={item} />;
+            inventories.map((inventory) => {
+              return <InventoryItem key={inventory.id} inventory={inventory} />;
             })}
         </div>
       </section>
