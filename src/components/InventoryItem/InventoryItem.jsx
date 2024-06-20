@@ -40,6 +40,7 @@ function InventoryItem() {
         </div>
         <div className="inventory-details-item__container--contact-name">
           <div className="inventory-details-item__text inventory-item__text--tb">
+            In Stock
             {/* <button */}
             {/*   className={ */}
             {/*     status === "In Stock" */}
@@ -53,6 +54,7 @@ function InventoryItem() {
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">status</h4>
             <div className="inventory-details-item__text">
+              status
               {/* <button */}
               {/*   className={ */}
               {/*     status === "In Stock" */}
@@ -66,11 +68,18 @@ function InventoryItem() {
           </div>
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">quantity</h4>
-            <p className="inventory-details-item__text">quantity{""}</p>
+            <p className="inventory-details-item__text">500{""}</p>
+          </div>
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">inventory</h4>
+            <p className="inventory-details-item__text">inventory{""}</p>
           </div>
         </div>
         <div className="inventory-details-item__container--contact-info">
-          <p className="inventory-details-item__text">quantity{""}</p>
+          <p className="inventory-details-item__text">500{""}</p>
+        </div>
+        <div className="inventory-details-item__container--contact-ware">
+          <p className="inventory-details-item__text">inventory{""}</p>
         </div>
         <div className="inventory-details-item__container--actions">
           <button className="inventory-details-item__button">

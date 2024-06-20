@@ -2,7 +2,7 @@
 @use "@/styles/partials/variables" as *;
 @use "@/styles/partials/mixins" as *;
 
-.warehouse-details-list {
+.inventory-details-list {
   width: 90%;
   margin: auto;
   background-color: $White;
@@ -16,20 +16,25 @@
     @include tablet() {
       flex-direction: row;
       align-items: center;
+      padding: 0 2rem;
       justify-content: space-between;
-      padding: 1rem 2rem 1rem 2rem;
     }
     &--left {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      width: 100%;
+    }
+    &--right {
+      @include tablet() {
+        display: flex;
+        align-items: center;
+      }
     }
   }
   &__header {
     text-transform: capitalize;
   }
   &__search {
+    margin: 1rem 0;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     background-color: $White;
@@ -40,6 +45,7 @@
     background-position: right 1rem center;
     outline: none;
     transition: all 0.15s ease-in-out;
+    width: 100%;
     &:active {
       border: 1px solid $Instock-Indigo;
     }
@@ -49,6 +55,10 @@
     @include tablet() {
       height: 2.5rem;
       margin-right: 1rem;
+      width: 11rem;
+    }
+    @include desktop() {
+      width: 20rem;
     }
   }
   &__button {
@@ -63,13 +73,13 @@
     font-family: Titillium;
     transition: all 0.15s ease-in-out;
     cursor: pointer;
-    width: 2.5rem;
+    width: 100%;
     height: 2.5rem;
     @include tablet() {
       height: 2.5rem;
-      margin-top: 0;
+      margin: 0;
       padding: 0.5rem;
-      width: 5rem;
+      width: 8rem;
     }
     &:hover {
       background-color: $Graphite;
@@ -92,7 +102,7 @@
   }
 }
 
-.warehouse-details-filter {
+.inventory-details-filter {
   display: none;
   background-color: $Light-Grey;
   @include tablet() {
@@ -124,24 +134,32 @@
     }
   }
   &__container {
-    &--warehouse-details {
+    &--inventory-details {
       @include tablet() {
         width: 20%;
       }
     }
     &--address {
       @include tablet() {
-        width: 20%;
+        width: 15%;
       }
     }
     &--contact-name {
       @include tablet() {
-        width: 20%;
+        width: 15%;
       }
     }
     &--contact-info {
       @include tablet() {
-        width: 20%;
+        width: 10%;
+      }
+      @include desktop() {
+        width: 5%;
+      }
+    }
+    &--contact-ware {
+      @include tablet() {
+        width: 10%;
       }
     }
     &--actions {
@@ -153,7 +171,7 @@
   }
 }
 
-.warehouse-details-information {
+.inventory-details-information {
   display: flex;
   flex-direction: column;
   padding: 0 1rem;

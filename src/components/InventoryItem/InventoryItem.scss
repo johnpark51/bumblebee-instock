@@ -5,15 +5,22 @@
 .inventory-details-item {
   display: flex;
   padding: 1rem 1rem;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
   border-top: 1px solid $Cloud;
   @include tablet() {
     padding: 1rem 2rem;
     border-bottom: 1px solid $Cloud;
     border-top: none;
-    gap: 0;
+    gap: 1rem;
   }
+  &__container--inventory {
+    margin: 0;
+    @include tablet() {
+      margin: auto 2rem auto 0;
+    }
+  }
+
   &__header-link {
     transition: all 0.15s ease-in-out;
     cursor: pointer;
@@ -70,18 +77,29 @@
       @include tablet() {
         width: 20%;
       }
+      @include desktop() {
+        width: 27%;
+      }
     }
     &--address {
       display: none;
       @include tablet() {
         display: flex;
         flex-direction: column;
-        width: 20%;
+        width: 23%;
+      }
+      @include desktop() {
+        width: 15%;
       }
     }
     &--contact-name {
+      width: 50%;
       @include tablet() {
         width: 20%;
+      }
+      @include desktop() {
+        width: 28%;
+        padding-left: 4rem;
       }
     }
     &--contact-info {
@@ -89,7 +107,23 @@
       @include tablet() {
         display: flex;
         flex-direction: column;
+        width: 15%;
+      }
+      @include desktop() {
+        width: 10%;
+        padding-left: 0.7rem;
+      }
+    }
+    &--contact-ware {
+      display: none;
+      @include tablet() {
+        display: flex;
+        flex-direction: column;
         width: 20%;
+      }
+      @include desktop() {
+        width: 25%;
+        padding-left: 0.5rem;
       }
     }
     &--actions {
