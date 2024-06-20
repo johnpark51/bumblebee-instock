@@ -2,7 +2,7 @@
 @use "@/styles/partials/variables" as *;
 @use "@/styles/partials/mixins" as *;
 
-.warehouse-details-item {
+.inventory-details-item {
   display: flex;
   padding: 1rem 1rem;
   justify-content: space-between;
@@ -66,7 +66,7 @@
     }
   }
   &__container {
-    &--warehouse {
+    &--inventory {
       @include tablet() {
         width: 20%;
       }
@@ -138,7 +138,7 @@
   }
 }
 
-.warehouse-details-item-actions-mb {
+.inventory-details-item-actions-mb {
   border-bottom: 1px solid $Cloud;
   display: flex;
   justify-content: space-between;
