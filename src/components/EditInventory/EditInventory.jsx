@@ -1,12 +1,13 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./EditInventory.scss";
 import arrow from "../../assets/Icons/arrow_back-24px.svg";
 import drop from "../../assets/Icons/arrow_drop_down-24px.svg";
 
 export default function EditInventory() {
   const { id } = useParams();
+  const [warehouses, setWarehouses] = useState(null);
   const navigation = useNavigate();
   const item_name = useRef();
   const inputDescription = useRef();
@@ -42,6 +43,15 @@ export default function EditInventory() {
     }
   };
 
+  const fetchWarehouses = () => {
+    axios.get("http://localhost:8080/warehouses").then((response) => {
+      setWarehouses(response.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchWarehouses();
+  }, []);
   return (
     <>
       <form className="form-edit" onSubmit={putInventory}>
@@ -149,18 +159,18 @@ export default function EditInventory() {
                   id="warehouse"
                   ref={inputWarehouse}
                 >
-                  <option className="form-edit__option" value="1">
-                    Manhattan
-                  </option>
-                  <option className="form-edit__option" value="2">
-                    Washington
-                  </option>
-                  <option className="form-edit__option" value="3">
-                    Jersey
-                  </option>
-                  <option className="form-edit__option" value="4">
-                    SF
-                  </option>
+                  {warehouses &&
+                    warehouses.map((ware) => {
+                      return (
+                        <option
+                          className="form-edit__option"
+                          key={ware.id}
+                          value={ware.id}
+                        >
+                          {ware.warehouse_name}
+                        </option>
+                      );
+                    })}
                 </select>
                 <img className="form-edit__option-img" src={drop} alt="^" />
               </section>
