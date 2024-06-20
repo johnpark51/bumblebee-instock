@@ -1,16 +1,27 @@
+import { Link } from 'react-router-dom'
+import { useState } from "react";
 import './AddInventory.scss'
 import arrow from '../../assets/Icons/arrow_back-24px.svg'
 import drop from '../../assets/Icons/arrow_drop_down-24px.svg'
 
 export default function AddInventory() {
+
+    const [value, setValue] = useState("test");
+
+    const onSubmit = (e) => {
+        console.log(e.target)
+    }
+
     return (
         <>
-            <form className='form'>
+            <form onSubmit={onSubmit} className='form'>
                 <header className='form__header'>
+                    <Link className='form__back' to='/'>
                         <img className='form__arrow' src={arrow} alt="<" />
-                        <h1 className='form__title'>
-                            Add New Inventory Item
-                        </h1>
+                    </Link>
+                    <h1 className='form__title'>
+                        Add New Inventory Item
+                    </h1>
                 </header>
                 <main className='form__main'>
                     <section className='form__details'>
@@ -27,15 +38,15 @@ export default function AddInventory() {
                             <h3 className='form__subtitle'>
                                 Description
                             </h3>
-                            <input className='form__input form__input--desc' type="text" placeholder='Please enter a brief item description...'/>
+                            <input name='description' className='form__input form__input--desc' type="text" placeholder='Please enter a brief item description...'/>
                         </section>
                         <section className='form__value form__value--drop-down'>
                             <h3 className='form__subtitle form__subtitle--drop-down'>
                                 Category
                             </h3>
                             <section className='form__drop-down'>
-                                <select className='form__input form__input--category' name="category" id="category">
-                                    <option className='form__option form__option--placeholder'  disabled selected value="">
+                                <select className='form__input form__input--category' name="category" id="category" value="hi" defaultValue="hi">
+                                    <option className='form__option form__option--placeholder'  disabled value="category">
                                         Category
                                     </option>
                                     <option className='form__option' value="Electronics">Electronics</option>
@@ -75,7 +86,7 @@ export default function AddInventory() {
                             <h3 className='form__subtitle'>
                                 Quantity
                             </h3>
-                            <input className='form__input form__input--qty' type="text" placeholder='0'/>
+                            <input className='form__input form__input--qty' type="text" placeholder='0' name='quantity'/>
                         </section>
                         <section className='form__value form__value--drop-down'>
                             <h3 className='form__subtitle form__subtitle--drop-down'>
@@ -98,9 +109,11 @@ export default function AddInventory() {
                 </main>
                 <section className='form__buttons'>
                     <div className='form__container'>
-                        <button className='form__button'>
-                            Cancel
-                        </button>
+                        <Link className='form__cancel' to='/'>
+                            <button className='form__button'>
+                                Cancel
+                            </button>
+                        </Link>
                         <button className='form__button
                             form__button--add'>
                             + Add Item

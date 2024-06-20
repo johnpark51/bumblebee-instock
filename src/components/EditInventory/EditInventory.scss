@@ -4,7 +4,7 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/resets" as *;
 
-.form {
+.form-edit {
     max-width: 1050px;
     width: 90%;
     background-color: $White;
@@ -97,6 +97,10 @@
 
         &--desc {
             padding: 0.5rem 0 5rem 1rem;
+
+            &::placeholder {
+                word-wrap: normal;
+            }
         }
 
         &--category {
@@ -220,25 +224,19 @@
         border-radius: 1.25rem;
         border: 1px solid $Cloud;
         background-color: $White;
-        width: 100%;
-        
+        width: 47.5%;
 
         @include tablet {
-            width: 80%;
+            width: 40%;
         }
 
         &--add {
             background-color: $Instock-Indigo;
             color: $White;
-            width: 47.5%;
 
             @include tablet {
                 width: 50%;
             }
         }
-    }
-
-    &__cancel {
-        width: 47.5%;
     }
 }
