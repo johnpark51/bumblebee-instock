@@ -7,90 +7,99 @@ import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 function InventoryItem() {
   return (
     <>
-      <article className="warehouse-details-item">
-        <div className="warehouse-details-item__container--warehouse">
-          <h3 className="warehouse-details-item__header--tb warehouse-details-item__header-link">
+      <article className="inventory-details-item">
+        <div className="inventory-details-item__container--inventory">
+          <h3 className="inventory-details-item__header--tb inventory-details-item__header-link">
             {/* {item_name}{" "} */}
             item_name
             <img
-              className="warehouse-item__icon"
+              className="inventory-item__icon"
               src={chevronIcon}
               alt="chevron"
             />
           </h3>
-          <div className="warehouse-details-item__mb">
-            <h4 className="warehouse-details-item__header">inventory item</h4>
-            <h3 className="warehouse-details-item__header--mb warehouse-details-item__header-link">
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">inventory item</h4>
+            <h3 className="inventory-details-item__header--mb inventory-details-item__header-link">
               {/* {item_name}{" "} */}
               item_name
               <img
-                className="warehouse-item__icon"
+                className="inventory-item__icon"
                 src={chevronIcon}
                 alt="chevron"
               />
             </h3>
           </div>
-          <div className="warehouse-details-item__mb">
-            <h4 className="warehouse-details-item__header">category</h4>
-            <p className="warehouse-details-item__text">category{""}</p>
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">category</h4>
+            <p className="inventory-details-item__text">category{""}</p>
           </div>
         </div>
-        <div className="warehouse-details-item__container--address">
-          <p className="warehouse-details-item__text">category{""}</p>
+        <div className="inventory-details-item__container--address">
+          <p className="inventory-details-item__text">category{""}</p>
         </div>
-        <div className="warehouse-details-item__container--contact-name">
-          <div className="warehouse-details-item__text warehouse-item__text--tb">
+        <div className="inventory-details-item__container--contact-name">
+          <div className="inventory-details-item__text inventory-item__text--tb">
+            In Stock
             {/* <button */}
             {/*   className={ */}
             {/*     status === "In Stock" */}
-            {/*       ? "warehouse-details-item__pill warehouse-details-item__pill--is" */}
-            {/*       : "warehouse-details-item__pill warehouse-details-item__pill--oos" */}
+            {/*       ? "inventory-details-item__pill inventory-details-item__pill--is" */}
+            {/*       : "inventory-details-item__pill inventory-details-item__pill--oos" */}
             {/*   } */}
             {/* > */}
             {/*   {status} */}
             {/* </button> */}
           </div>
-          <div className="warehouse-details-item__mb">
-            <h4 className="warehouse-details-item__header">status</h4>
-            <div className="warehouse-details-item__text">
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">status</h4>
+            <div className="inventory-details-item__text">
+              status
               {/* <button */}
               {/*   className={ */}
               {/*     status === "In Stock" */}
-              {/*       ? "warehouse-details-item__pill warehouse-details-item__pill--is" */}
-              {/*       : "warehouse-details-item__pill warehouse-details-item__pill--oos" */}
+              {/*       ? "inventory-details-item__pill inventory-details-item__pill--is" */}
+              {/*       : "inventory-details-item__pill inventory-details-item__pill--oos" */}
               {/*   } */}
               {/* > */}
               {/*   {status} */}
               {/* </button> */}
             </div>
           </div>
-          <div className="warehouse-details-item__mb">
-            <h4 className="warehouse-details-item__header">quantity</h4>
-            <p className="warehouse-details-item__text">quantity{""}</p>
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">quantity</h4>
+            <p className="inventory-details-item__text">500{""}</p>
+          </div>
+          <div className="inventory-details-item__mb">
+            <h4 className="inventory-details-item__header">inventory</h4>
+            <p className="inventory-details-item__text">inventory{""}</p>
           </div>
         </div>
-        <div className="warehouse-details-item__container--contact-info">
-          <p className="warehouse-details-item__text">quantity{""}</p>
+        <div className="inventory-details-item__container--contact-info">
+          <p className="inventory-details-item__text">500{""}</p>
         </div>
-        <div className="warehouse-details-item__container--actions">
-          <button className="warehouse-details-item__button">
+        <div className="inventory-details-item__container--contact-ware">
+          <p className="inventory-details-item__text">inventory{""}</p>
+        </div>
+        <div className="inventory-details-item__container--actions">
+          <button className="inventory-details-item__button">
             <img
-              className="warehouse-item__icon"
+              className="inventory-item__icon"
               src={deleteIcon}
               alt="delete"
             />
           </button>
-          <button className="warehouse-details-item__button">
-            <img className="warehouse-item__icon" src={editIcon} alt="edit" />
+          <button className="inventory-details-item__button">
+            <img className="inventory-item__icon" src={editIcon} alt="edit" />
           </button>
         </div>
       </article>
-      <div className="warehouse-details-item-actions-mb">
-        <button className="warehouse-details-item__button">
-          <img className="warehouse-item__icon" src={deleteIcon} alt="delete" />
+      <div className="inventory-details-item-actions-mb">
+        <button className="inventory-details-item__button">
+          <img className="inventory-item__icon" src={deleteIcon} alt="delete" />
         </button>
-        <button className="warehouse-details-item__button">
-          <img className="warehouse-item__icon" src={editIcon} alt="edit" />
+        <button className="inventory-details-item__button">
+          <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>
     </>
