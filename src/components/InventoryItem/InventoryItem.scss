@@ -6,13 +6,12 @@
   display: flex;
   padding: 1rem 1rem;
   align-items: flex-start;
-  justify-content: space-between;
   border-top: 1px solid $Cloud;
+  justify-content: space-between;
   @include tablet() {
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     border-bottom: 1px solid $Cloud;
     border-top: none;
-    gap: 1rem;
   }
   &__container--inventory {
     margin: 0;
@@ -75,10 +74,7 @@
   &__container {
     &--inventory {
       @include tablet() {
-        width: 20%;
-      }
-      @include desktop() {
-        width: 27%;
+        width: 33%;
       }
     }
     &--address {
@@ -86,20 +82,16 @@
       @include tablet() {
         display: flex;
         flex-direction: column;
-        width: 23%;
+        width: 30%;
       }
       @include desktop() {
-        width: 15%;
+        width: 35%;
       }
     }
     &--contact-name {
       width: 50%;
       @include tablet() {
-        width: 20%;
-      }
-      @include desktop() {
-        width: 28%;
-        padding-left: 4rem;
+        width: 40%;
       }
     }
     &--contact-info {
@@ -107,11 +99,10 @@
       @include tablet() {
         display: flex;
         flex-direction: column;
-        width: 15%;
+        width: 18%;
       }
       @include desktop() {
-        width: 10%;
-        padding-left: 0.7rem;
+        width: 15%;
       }
     }
     &--contact-ware {
@@ -119,11 +110,10 @@
       @include tablet() {
         display: flex;
         flex-direction: column;
-        width: 20%;
+        width: 22%;
       }
       @include desktop() {
-        width: 25%;
-        padding-left: 0.5rem;
+        width: 30%;
       }
     }
     &--actions {
@@ -132,7 +122,8 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        width: 20%;
+        width: 15%;
+        padding-left: 1rem;
       }
     }
   }

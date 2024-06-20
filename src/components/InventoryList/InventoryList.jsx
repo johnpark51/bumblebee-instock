@@ -1,5 +1,5 @@
 /* LOGIC */
-import useWarehouses from "@/utils/hooks/useWarehouses";
+import useInventories from "@/utils/hooks/useInventories";
 import { useNavigate } from "react-router-dom";
 
 /* STYLES */
@@ -11,10 +11,11 @@ import InventoryItem from "@/components/InventoryItem/InventoryItem";
 
 function InventoryList({}) {
   const navigation = useNavigate();
-  const { error } = useWarehouses();
+  const { inventories, error } = useInventories();
 
+  console.log(inventories);
   function handleAddWarehouse() {
-    navigation("/warehouse/add");
+    navigation("/inventories/add");
   }
 
   if (error) return <p>{error}</p>;
@@ -101,11 +102,12 @@ function InventoryList({}) {
             </h4>
           </div>
         </section>
-        <InventoryItem />
-
-        {/* {inventories.map((item) => { */}
-        {/*   return <inventoryItem key={item.id} item={item} />; */}
-        {/* })} */}
+        <div className="growth">
+          {inventories &&
+            inventories.map((item) => {
+              return <InventoryItem key={item.id} item={item} />;
+            })}
+        </div>
       </section>
     </>
   );
