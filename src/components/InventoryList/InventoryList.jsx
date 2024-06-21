@@ -1,12 +1,9 @@
-/* LOGIC */
 import useInventories from "@/utils/hooks/useInventories";
 import { Link, useNavigate } from "react-router-dom";
 
-/* STYLES */
 import "./InventoryList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 
-/* COMPONENTS */
 import InventoryItem from "@/components/InventoryItem/InventoryItem";
 
 function InventoryList() {

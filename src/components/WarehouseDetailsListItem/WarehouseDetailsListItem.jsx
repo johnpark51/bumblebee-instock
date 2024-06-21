@@ -7,7 +7,6 @@ import DeleteInventory from "@/components/DeleteInventory/DeleteInventory";
 
 /* STYLES */
 import "./WarehouseDetailsListItem.scss";
-import { Link } from "react-router-dom";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";

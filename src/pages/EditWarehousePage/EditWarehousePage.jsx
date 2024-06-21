@@ -1,6 +1,5 @@
 import "@/pages/EditWarehousePage/EditWarehousePage.scss";
 
-/* COMPONENTS */
 import Header from "@/components/Header/Header";
 import EditWarehouse from "@/components/EditWarehouse/EditWarehouse";
 import Footer from "@/components/Footer/Footer";

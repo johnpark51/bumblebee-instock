@@ -11,7 +11,6 @@ function useWarehouse() {
     getWarehouse(id)
   }, [id]);
 
-  /* FETCH WAREHOUSE BY ID */
   async function getWarehouse(id) {
     try {
       const warehouse = await api.getWarehouseDetails(id);

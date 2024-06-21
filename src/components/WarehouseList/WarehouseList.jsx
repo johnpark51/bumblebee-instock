@@ -1,12 +1,9 @@
-/* LOGIC */
 import useWarehouses from "@/utils/hooks/useWarehouses";
 import { useNavigate } from "react-router-dom";
 
-/* STYLES */
 import "./WarehouseList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 
-/* COMPONENTS */
 import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
 
 function WarehouseList() {

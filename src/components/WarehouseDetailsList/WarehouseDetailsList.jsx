@@ -1,12 +1,9 @@
-/* LOGIC */
 import { Link, useNavigate } from "react-router-dom";
 
-/* STYLES */
 import "./WarehouseDetailsList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 import arrowBackIcon from "@/assets/Icons/arrow_back-24px.svg";
 
-/* COMPONENTS */
 import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/WarehouseDetailsListItem";
 import EditIcon from "@/components/Icons/EditIcon";
 

@@ -1,4 +1,3 @@
-/* ROUTES */
 import WarehousePage from "@/pages/WarehousePage/WarehousePage";
 import EditWarehousePage from "../pages/EditWarehousePage/EditWarehousePage";
 import WarehouseDetailsPage from "@/pages/WarehouseDetailsPage/WarehouseDetailsPage";
@@ -10,7 +9,6 @@ import AddInventoryPage from "@/pages/AddInventoryPage/AddInventoryPage";
 import InventoryPage from "@/pages/InventoryPage/InventoryPage";
 import EditInventoryPage from "@/pages/EditInventoryPage/EditInventoryPage";
 
-/* ROUTE CONFIG */
 const routes = [
   {
     name: "Home",
