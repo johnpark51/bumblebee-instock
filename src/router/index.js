@@ -61,12 +61,7 @@ const routes = [
     name: '404',
     path: '*',
     component: NotFoundPage
-  },
-  {
-    name: "404",
-    path: "*",
-    component: NotFoundPage,
-  },
+  }
 ];
 
 export default routes;
