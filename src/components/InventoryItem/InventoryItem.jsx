@@ -36,7 +36,7 @@ function InventoryItem({
       />
       <article className="inventory-details-item">
         <div className="inventory-details-item__container--inventory">
-          <Link to={`/inventory/${id}`}>
+          <Link className="inventory-details-item__header--link" to={`/inventory/${id}`}>
             <h3 className="inventory-details-item__header--tb inventory-details-item__header-link">
               {item_name}{" "}
               <img
@@ -48,7 +48,7 @@ function InventoryItem({
           </Link>
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">inventory item</h4>
-            <Link to={`/inventory/${id}`}>
+            <Link className="link" to={`/inventory/${id}`}>
               <h3 className="inventory-details-item__header--mb inventory-details-item__header-link">
                 {item_name}{" "}
                 <img
