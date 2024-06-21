@@ -14,6 +14,7 @@ export default function EdtInventory() {
   const inputCategory = useRef();
   const inputWarehouse = useRef();
   const [status, setStatus] = useState("");
+  const [quantity, setQuantity] = useState(null);
 
   const handleCancel = (e) => {
     navigation("/inventory");
@@ -27,17 +28,34 @@ export default function EdtInventory() {
       inputDescription.current.value === "" ||
       inputCategory.current.value === ""
     ) {
+      if (status === "inStock" && quantity === null) {
+        return false;
+      }
+
       return false;
     } else {
-      const updatedInventory = {
-        warehouse_id: inputWarehouse.current.value,
-        item_name: item_name.current.value,
-        description: inputDescription.current.value,
-        category: inputCategory.current.value,
-        status: status,
-      };
-      axios.put(`http://localhost:8080/inventories/${id}`, updatedInventory);
-      navigation("/inventory");
+      if (status === "Out of Stock") {
+        const updatedInventory = {
+          warehouse_id: inputWarehouse.current.value,
+          item_name: item_name.current.value,
+          description: inputDescription.current.value,
+          category: inputCategory.current.value,
+          status: status,
+        };
+        axios.put(`http://localhost:8080/inventories/${id}`, updatedInventory);
+        navigation("/inventory");
+      } else {
+        const updatedInventory = {
+          warehouse_id: inputWarehouse.current.value,
+          item_name: item_name.current.value,
+          description: inputDescription.current.value,
+          category: inputCategory.current.value,
+          status: status,
+          quantity: quantity,
+        };
+        axios.put(`http://localhost:8080/inventories/${id}`, updatedInventory);
+        navigation("/inventory");
+      }
     }
   };
 
@@ -136,6 +154,19 @@ export default function EdtInventory() {
                   <label className="form-edit__lab">Out of Stock</label>
                 </div>
               </div>
+            </section>
+            <section
+              className={`form__value ${status !== "In Stock" ? "form__value--remove" : ""}`}
+            >
+              <h3 className="form__subtitle">Quantity</h3>
+              <input
+                required
+                onChange={(e) => setQuantity(e.target.value)}
+                className="form__input form__input--qty"
+                type="number"
+                placeholder="0"
+                name="quantity"
+              />
             </section>
             <section className="form-edit__value form-edit__value--drop-down">
               <h3 className="form-edit__subtitle form-edit__subtitle--drop-down">
