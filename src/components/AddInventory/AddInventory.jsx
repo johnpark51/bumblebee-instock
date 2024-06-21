@@ -1,15 +1,49 @@
 import { Link } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './AddInventory.scss'
 import arrow from '../../assets/Icons/arrow_back-24px.svg'
 import drop from '../../assets/Icons/arrow_drop_down-24px.svg'
+import axios from 'axios'
 
 export default function AddInventory() {
 
-    const [value, setValue] = useState("test");
+    const [warehouses, setWarehouses] = useState(null)
+    const [formData, setFormData] = useState({
+        warehouse_id: null,
+        item_name: "",
+        description:
+          "",
+        category: "",
+        status: "",
+        quantity: null,
+      });
 
-    const onSubmit = (e) => {
-        console.log(e.target)
+
+
+    useEffect(() => {
+        const getWarehouse = async () => {
+            try {
+                const result = await axios.get("http://localhost:8080/warehouses")
+                setWarehouses(result.data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        getWarehouse()
+    }, [])
+
+
+
+    const onChange = (e) => {
+        const { name, value } = e.target
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
+
+    const onSubmit = async (e) => {
+        await axios.post("http://localhost:8080/inventories", formData)
     }
 
     return (
@@ -32,22 +66,22 @@ export default function AddInventory() {
                             <h3 className='form__subtitle'>
                                 Item Name
                             </h3>
-                            <input className='form__input' type="text" placeholder='Item Name'/>
+                            <input name='item_name' onChange={onChange} className='form__input' type="text" placeholder='Item Name' required/>
                         </section>
                         <section className='form__value'>
                             <h3 className='form__subtitle'>
                                 Description
                             </h3>
-                            <input name='description' className='form__input form__input--desc' type="text" placeholder='Please enter a brief item description...'/>
+                            <input required onChange={onChange} name='description' className='form__input form__input--desc' type="text" placeholder='Please enter a brief item description...'/>
                         </section>
                         <section className='form__value form__value--drop-down'>
                             <h3 className='form__subtitle form__subtitle--drop-down'>
                                 Category
                             </h3>
                             <section className='form__drop-down'>
-                                <select className='form__input form__input--category' name="category" id="category" value="hi" defaultValue="hi">
-                                    <option className='form__option form__option--placeholder'  disabled value="category">
-                                        Category
+                                <select required onChange={onChange} className='form__input form__input--category' name="category" id="category">
+                                    <option className='form__option form__option--placeholder'  defaultValue>
+                                        Please select
                                     </option>
                                     <option className='form__option' value="Electronics">Electronics</option>
                                     <option className='form__option' value="Gear">Gear</option>
@@ -63,44 +97,47 @@ export default function AddInventory() {
                         <h2 className='form__subheader'>
                             Item Availability
                         </h2>
-                        <section className='form__status'>
+                        <section className={`form__status ${formData.status !== "In Stock" ? "form__status--remove" : ""}`}>
                             <h3 className='form__subtitle'>
                                 Status
                             </h3>
                             <div className='form__rad'>
                                 <div className='form__holder'>
-                                    <input type="radio" className='form__radio' name='inStock' id='inStock'/>
+                                    <input required onChange={onChange} type="radio" className='form__radio' name='status' id='inStock' value="In Stock"/>
                                     <label className='form__lab'>
                                         In Stock
                                     </label>
                                 </div>
                                 <div className='form__holder'>
-                                    <input type="radio" className='form__radio' name='outOfStock' id='outOfStock'/>
+                                    <input required onChange={onChange} name="status" type="radio" className='form__radio' value="Out of Stock" id='outOfStock'/>
                                     <label className='form__lab'>
                                         Out of Stock
                                     </label>
                                 </div>
                             </div>
                         </section>
-                        <section className='form__value'>
+                        <section className={`form__value ${formData.status !== "In Stock" ? "form__value--remove" : ""}`}>
                             <h3 className='form__subtitle'>
                                 Quantity
                             </h3>
-                            <input className='form__input form__input--qty' type="text" placeholder='0' name='quantity'/>
+                            <input required onChange={onChange} className='form__input form__input--qty' type="number" placeholder='0' name='quantity'/>
                         </section>
                         <section className='form__value form__value--drop-down'>
                             <h3 className='form__subtitle form__subtitle--drop-down'>
                                 Warehouse
                             </h3>
                             <section className='form__drop-down'>
-                                <select className='form__input  form__input--category' name="warehouse" id="warehouse">
-                                    <option className='form__option form__option--placeholder'  disabled selected value="">
+                                <select required onChange={onChange} className='form__input form__input--category' name="warehouse_id" id="warehouse">
+                                    <option className='form__option form__option--placeholder' defaultValue>
                                         Please select
                                     </option>
-                                    <option className='form__option' value="">John</option>
-                                    <option className='form__option' value="">Santiago</option>
-                                    <option className='form__option' value="">Jay</option>
-                                    <option className='form__option' value="">Jason</option>
+                                    {warehouses && warehouses.map((warehouse) => {
+                                        return (
+                                            <option name="warehouse_id" className='form__option' key={warehouse.id} value={warehouse.id}>
+                                                {warehouse.warehouse_name}
+                                            </option>
+                                        )
+                                    })}
                                 </select>
                                 <img className='form__option-img' src={drop} alt="^" />
                             </section>
@@ -114,7 +151,7 @@ export default function AddInventory() {
                                 Cancel
                             </button>
                         </Link>
-                        <button className='form__button
+                        <button type='submit' className='form__button
                             form__button--add'>
                             + Add Item
                         </button>
