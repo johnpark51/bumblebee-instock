@@ -52,6 +52,7 @@ export default function EditInventory() {
   useEffect(() => {
     fetchWarehouses();
   }, []);
+
   return (
     <>
       <form className="form-edit" onSubmit={putInventory}>

@@ -6,7 +6,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import InventoryList from "@/components/InventoryList/InventoryList";
 
-function WarehousePage() {
+function InventoryPage() {
   return (
     <>
       <Header />
@@ -18,4 +18,4 @@ function WarehousePage() {
   );
 }
 
-export default WarehousePage;
+export default InventoryPage;
