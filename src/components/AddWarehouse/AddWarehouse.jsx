@@ -51,6 +51,7 @@ function AddWarehouse() {
 			contact_email: inputEmail.current.value.trim(" "),
 		  };
 		  axios.post("http://localhost:8080/warehouses", updatedWarehouse);
+      navigation("/")
 	} else {
 		return false;
 	}

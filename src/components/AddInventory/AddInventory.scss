@@ -71,6 +71,10 @@
         &--drop-down {
             margin-bottom: 2rem;
         }
+
+        &--remove {
+            display: none;
+        }
     }
 
     &__subtitle {
@@ -105,10 +109,12 @@
 
             @include tablet {
                 width: 37%;
+                // max-width: 284.16px;
             }
 
             @include desktop {
                 width: 36.25%;
+                max-width: 460px;
             }
         }
 
@@ -152,6 +158,10 @@
 
         @include desktop {
             width: 50%;
+        }
+
+        &--remove {
+            margin-bottom: 1rem;
         }
     }
 
