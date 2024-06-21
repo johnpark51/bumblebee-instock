@@ -40,9 +40,7 @@ function InventoryDetails({
 			<section className="inventory-details__bottom">
 				<section className="inventory-details__left">
 					<h4 className="inventory-details__subheaders">ITEM DESCRIPTION:</h4>
-					<p className="inventory-details__text">
-						{description}
-					</p>
+					<p className="inventory-details__text">{description}</p>
 					<h4 className="inventory-details__subheaders">CATEGORY:</h4>
 					<p className="inventory-details__text">{category}</p>
 				</section>
@@ -50,9 +48,14 @@ function InventoryDetails({
 					<section className="inventory-details__right--top">
 						<section className="inventory-details__status-section">
 							<h4 className="inventory-details__subheaders">STATUS:</h4>
-							<div className="inventory-details__status">
-								<p className="inventory-details__text--status">{status}</p>
-							</div>
+							<button
+								className={
+									status === "In Stock"
+										? "inventory-details-item__pill inventory-details-item__pill--is"
+										: "inventory-details-item__pill inventory-details-item__pill--oos"
+								}>
+								{status}
+							</button>
 						</section>
 						<section className="inventory-details__quantity-section">
 							<h4 className="inventory-details__subheaders">QUANTITY:</h4>

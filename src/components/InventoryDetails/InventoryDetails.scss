@@ -34,39 +34,39 @@
 		}
 	}
 
-    &__button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50rem;
-        border-style: none;
-        background-color: $Instock-Indigo;
-        color: $White;
-        text-transform: capitalize;
-        font-family: Titillium;
-        transition: all 0.15s ease-in-out;
-        cursor: pointer;
-        width: 2.5rem;
-        height: 2.5rem;
-        margin-left: auto;
-        @include tablet() {
-          height: 2.5rem;
-          margin-top: 0;
-          padding: 0.5rem;
-          width: 5rem;
-        }
-        &:hover {
-          background-color: $Graphite;
-        }
-      }
-      &__button-text {
-        margin-left: 0.5rem;
-        display: none;
-        @include tablet() {
-          display: flex;
-          margin-left: 0.5rem;
-        }
-      }
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50rem;
+		border-style: none;
+		background-color: $Instock-Indigo;
+		color: $White;
+		text-transform: capitalize;
+		font-family: Titillium;
+		transition: all 0.15s ease-in-out;
+		cursor: pointer;
+		width: 2.5rem;
+		height: 2.5rem;
+		margin-left: auto;
+		@include tablet() {
+			height: 2.5rem;
+			margin-top: 0;
+			padding: 0.5rem;
+			width: 5rem;
+		}
+		&:hover {
+			background-color: $Graphite;
+		}
+	}
+	&__button-text {
+		margin-left: 0.5rem;
+		display: none;
+		@include tablet() {
+			display: flex;
+			margin-left: 0.5rem;
+		}
+	}
 
 	&__bottom {
 		@include tablet {
@@ -124,16 +124,24 @@
 		}
 	}
 
-	&__status {
-		border-radius: 20px;
-		font-size: 0.8rem;
-		background-color: #15846312;
-		width: 4rem;
-		height: 1.8rem;
-		display: flex;
-		justify-content: center;
-        @include tablet {
-            margin-bottom: 1rem;
-        }
+	&__pill {
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		line-height: 1.125rem;
+		margin-bottom: 1rem;
+		@include tablet() {
+			margin-top: 0;
+		}
+		&--is {
+			color: $Green;
+			background-color: rgba($color: $Green, $alpha: 0.07);
+		}
+		&--oos {
+			color: $Red;
+			background-color: rgba($color: $Red, $alpha: 0.07);
+		}
 	}
 }
