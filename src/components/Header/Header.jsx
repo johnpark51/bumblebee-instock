@@ -1,5 +1,5 @@
 import "./Header.scss";
-import logo from "../../assets/Logo/InStock-Logo.svg";
+import logo from "@/assets/Logo/InStock-Logo.svg";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
@@ -20,5 +20,4 @@ export default function Header() {
       </section>
     </header>
   );
-}
-
+};
