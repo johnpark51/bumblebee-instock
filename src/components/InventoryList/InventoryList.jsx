@@ -13,13 +13,11 @@ function InventoryList({}) {
   const navigation = useNavigate();
   const { inventories, error } = useInventories();
 
-  console.log(inventories);
   function handleAddWarehouse() {
-    navigation("/inventories/add");
+    navigation("/inventory/add");
   }
 
   if (error) return <p>{error}</p>;
-
   return (
     <>
       <section className="inventory-details-list">

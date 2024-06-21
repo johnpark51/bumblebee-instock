@@ -7,7 +7,7 @@ import AddWarehousePage from "@/pages/AddWarehousePage/AddWarehousePage";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 import AddInventoryPage from "@/pages/AddInventoryPage/AddInventoryPage";
 import InventoryPage from "@/pages/InventoryPage/InventoryPage";
-import EditInventoryPage from "@/pages/EditInventoryPage/EditInventoryPage"
+import EditInventoryPage from "@/pages/EditInventoryPage/EditInventoryPage";
 
 /* ROUTE CONFIG */
 const routes = [
@@ -37,9 +37,9 @@ const routes = [
     component: AddWarehousePage,
   },
   {
-    name: 'Add Inventory',
-    path: '/inventory/add',
-    component: AddInventoryPage
+    name: "Add Inventory",
+    path: "/inventory/add",
+    component: AddInventoryPage,
   },
   {
     name: "InventoryList",
@@ -48,14 +48,14 @@ const routes = [
   },
   {
     name: "Edit Inventory",
-    path: '/inventory/edit',
-    component: EditInventoryPage
+    path: "/inventory/edit/:id",
+    component: EditInventoryPage,
   },
   {
-    name: '404',
-    path: '*',
-    component: NotFoundPage
-  }
+    name: "404",
+    path: "*",
+    component: NotFoundPage,
+  },
 ];
 
 export default routes;
