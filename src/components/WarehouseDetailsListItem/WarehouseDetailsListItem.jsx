@@ -1,16 +1,18 @@
 /* STYLES */
 import "./WarehouseDetailsListItem.scss";
+import { Link } from "react-router-dom";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 
 function WarehouseDetailsListItem({
-	item: { category, item_name, quantity, status },
+	item: { id, category, item_name, quantity, status },
 }) {
 	return (
 		<>
 			<article className="warehouse-details-item">
 				<div className="warehouse-details-item__container--warehouse">
+          <Link to={`/inventory/edit/${id}`}>
 					<h3 className="warehouse-details-item__header--tb warehouse-details-item__header-link">
 						{item_name}{" "}
 						<img
@@ -19,6 +21,7 @@ function WarehouseDetailsListItem({
 							alt="chevron"
 						/>
 					</h3>
+          </Link>
 					<div className="warehouse-details-item__mb">
 						<h4 className="warehouse-details-item__header">inventory item</h4>
 						<h3 className="warehouse-details-item__header--mb warehouse-details-item__header-link">
