@@ -13,35 +13,35 @@ function InventoryList() {
 	const navigation = useNavigate();
 	const { inventories, error } = useInventories();
 
-	function handleAddWarehouse() {
-		navigation("/inventory/add");
-	}
+  function handleAddWarehouse() {
+    navigation("/inventory/add");
+  }
 
-	if (error) return <p>{error}</p>;
-
-	return (
-		<>
-			<section className="inventory-details-list">
-				<div className="inventory-details-list__top">
-					<div className="inventory-details-list__top--left">
-						<h1 className="inventory-details-list__header">Inventory</h1>
-					</div>
-					<div className="inventory-details-list__top--right">
-						<input
-							className="inventory-details-list__search"
-							type="search"
-							placeholder="Search..."
-						/>
-						<button
-							onClick={() => {
-								handleAddWarehouse();
-							}}
-							role="link"
-							className="inventory-details-list__button">
-							+ add new item
-						</button>
-					</div>
-				</div>
+  if (error) return <p>{error}</p>;
+  return (
+    <>
+      <section className="inventory-details-list">
+        <div className="inventory-details-list__top">
+          <div className="inventory-details-list__top--left">
+            <h1 className="inventory-details-list__header">Inventory</h1>
+          </div>
+          <div className="inventory-details-list__top--right">
+            <input
+              className="inventory-details-list__search"
+              type="search"
+              placeholder="search"
+            />
+            <button
+              onClick={() => {
+                handleAddWarehouse();
+              }}
+              role="link"
+              className="inventory-details-list__button"
+            >
+              + add new item
+            </button>
+          </div>
+        </div>
 
 				<section className="inventory-details-filter">
 					<div className="inventory-details-filter__container--inventory-details">

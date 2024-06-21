@@ -15,14 +15,14 @@ function InventoryItem({
     quantity,
     item_name,
     category,
+    description,
+    warehouse_id,
   },
 }) {
-  
   const navigation = useNavigate();
-  function handleClickEdit() {
-		navigation(`/inventory/edit`);
-	}
-
+  const handleEdit = () => {
+    navigation(`/inventory/edit/${id}`, { state: { warehouse_id } });
+  };
   return (
     <>
       <article className="inventory-details-item">
@@ -103,10 +103,14 @@ function InventoryItem({
               alt="delete"
             />
           </button>
-          <button onClick={() => {
-						handleClickEdit();
-					}} className="inventory-details-item__button">
-            <img className="inventory-item__icon" src={editIcon} alt="edit" />
+          <button className="inventory-details-item__button">
+            <img
+              onClick={handleEdit}
+              role="link"
+              className="inventory-item__icon"
+              src={editIcon}
+              alt="edit"
+            />
           </button>
         </div>
       </article>
@@ -114,9 +118,11 @@ function InventoryItem({
         <button className="inventory-details-item__button">
           <img className="inventory-item__icon" src={deleteIcon} alt="delete" />
         </button>
-        <button onClick={() => {
-						handleClickEdit();
-					}} className="inventory-details-item__button">
+        <button
+          onClick={handleEdit}
+          className="inventory-details-item__button"
+          role="link"
+        >
           <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>
