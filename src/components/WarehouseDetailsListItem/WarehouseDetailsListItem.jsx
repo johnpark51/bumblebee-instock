@@ -1,3 +1,10 @@
+/* LOGIC */
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+/* COMPONENTS */
+import DeleteInventory from "@/components/DeleteInventory/DeleteInventory";
+
 /* STYLES */
 import "./WarehouseDetailsListItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
@@ -5,12 +12,27 @@ import editIcon from "@/assets/Icons/edit-24px.svg";
 import chevronIcon from "@/assets/Icons/chevron_right-24px.svg";
 
 function WarehouseDetailsListItem({
-	item: { category, item_name, quantity, status },
+	item: { id, category, item_name, quantity, status },
 }) {
+
+  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
+
+  function handleEdit() {
+    navigate(`/warehouse/edit/${id}`);
+  };
+
 	return (
 		<>
+      <DeleteInventory
+        id={id}
+        item_name={item_name}
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+      />
 			<article className="warehouse-details-item">
 				<div className="warehouse-details-item__container--warehouse">
+          <Link to={`/inventory/edit/${id}`}>
 					<h3 className="warehouse-details-item__header--tb warehouse-details-item__header-link">
 						{item_name}{" "}
 						<img
@@ -19,6 +41,7 @@ function WarehouseDetailsListItem({
 							alt="chevron"
 						/>
 					</h3>
+          </Link>
 					<div className="warehouse-details-item__mb">
 						<h4 className="warehouse-details-item__header">inventory item</h4>
 						<h3 className="warehouse-details-item__header--mb warehouse-details-item__header-link">
@@ -71,23 +94,23 @@ function WarehouseDetailsListItem({
 					<p className="warehouse-details-item__text">{quantity}</p>
 				</div>
 				<div className="warehouse-details-item__container--actions">
-					<button className="warehouse-details-item__button">
+					<button onClick={() => { setOpenModal(true); }} className="warehouse-details-item__button">
 						<img
 							className="warehouse-item__icon"
 							src={deleteIcon}
 							alt="delete"
 						/>
 					</button>
-					<button className="warehouse-details-item__button">
+					<button onClick={() => { handleEdit(); }} className="warehouse-details-item__button">
 						<img className="warehouse-item__icon" src={editIcon} alt="edit" />
 					</button>
 				</div>
 			</article>
 			<div className="warehouse-details-item-actions-mb">
-				<button className="warehouse-details-item__button">
+				<button onClick={() => { setOpenModal(true); }} className="warehouse-details-item__button">
 					<img className="warehouse-item__icon" src={deleteIcon} alt="delete" />
 				</button>
-				<button className="warehouse-details-item__button">
+				<button onClick={() => { handleEdit(); }} className="warehouse-details-item__button">
 					<img className="warehouse-item__icon" src={editIcon} alt="edit" />
 				</button>
 			</div>
