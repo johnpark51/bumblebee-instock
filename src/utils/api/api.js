@@ -11,7 +11,6 @@ class Api {
     });
   }
 
-  /* GET WAREHOUSES */
   async getWarehouses() {
     const route = "/warehouses";
     try {
@@ -22,7 +21,6 @@ class Api {
     }
   }
 
-  /* GET BY ID */
   async getWarehouse(id) {
     const route = `/warehouses/${id}`;
     try {
@@ -33,7 +31,6 @@ class Api {
     }
   }
 
-  /* FETCH WAREHOUSE AND INVENTORIES */
   async getWarehouseDetails(id) {
     const route = `/warehouses/details/${id}`;
     try {
@@ -44,7 +41,6 @@ class Api {
     }
   }
 
-  /* FETCH ALL INVENTORIES */
   async getInventories() {
     const route = "/inventories";
     try {
@@ -55,7 +51,6 @@ class Api {
     }
   }
 
-  /* FETCH INVENTORY BY ID */
   async getInventoriesDetails(id) {
     const route = `/inventories/${id}`;
     try {

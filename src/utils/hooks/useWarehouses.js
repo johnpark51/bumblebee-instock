@@ -9,7 +9,6 @@ function useWarehouses() {
     getWarehouses();
   }, []);
 
-  /* FETCH ALL */
   async function getWarehouses() {
     try {
       const warehouses = await api.getWarehouses();

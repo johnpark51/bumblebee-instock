@@ -13,8 +13,6 @@ html {
     display: flex;
     justify-content: center;
 
-    //header
-
     &__details {
         background-color: $White;
         min-width: 90%;
@@ -107,8 +105,6 @@ html {
             margin-left: 0.313rem;
         }
     }
-
-    //details
 
     &__warehouse {
         padding: 1rem 1rem;
@@ -217,8 +213,6 @@ html {
             padding-right: 2rem;
         }
     }
-
-    //items
 
     &__items {
         padding: 1rem;
@@ -330,8 +324,6 @@ html {
         gap: 1rem;
     }
 
-    //itstat
-
     &__itstat {
         display: flex;
         justify-content: space-between;
@@ -381,8 +373,6 @@ html {
             font-size: 0.875rem;
         }
     }
-
-    //catqua
 
     &__catqua {
         display: flex;

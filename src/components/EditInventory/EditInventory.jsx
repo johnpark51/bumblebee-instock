@@ -1,6 +1,6 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import "./EditInventory.scss";
 import arrow from "@/assets/Icons/arrow_back-24px.svg";
 import drop from "@/assets/Icons/arrow_drop_down-24px.svg";
