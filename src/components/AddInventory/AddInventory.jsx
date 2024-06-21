@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from "react";
 import './AddInventory.scss'
 import arrow from '../../assets/Icons/arrow_back-24px.svg'
 import drop from '../../assets/Icons/arrow_drop_down-24px.svg'
@@ -8,8 +8,9 @@ import useWarehouse from '@/utils/hooks/useWarehouses.js'
 
 export default function AddInventory() {
 
+    const navigate = useNavigate();
+
     const {warehouses, error} = useWarehouse();
-    // const [warehouses, setWarehouses] = useState(null)
     const [formData, setFormData] = useState({
         warehouse_id: null,
         item_name: "",
@@ -17,35 +18,27 @@ export default function AddInventory() {
           "",
         category: "",
         status: "",
-        quantity: null,
+        quantity: 0,
     });
-
-
-
-    // useEffect(() => {
-    //     const getWarehouse = async () => {
-    //         try {
-    //             const result = await axios.get("http://localhost:8080/warehouses")
-    //             setWarehouses(result.data)
-    //         } catch (error) {
-    //             console.error(error)
-    //         }
-    //     }
-    //     getWarehouse()
-    // }, [])
-
-
 
     const onChange = (e) => {
         const { name, value } = e.target
+        console.log(name, value);
         setFormData({
             ...formData,
             [name]: value,
         })
+        console.log(formData);
     }
 
     const onSubmit = async (e) => {
-        await axios.post("http://localhost:8080/inventories", formData)
+        try {
+            e.preventDefault();
+            await axios.post("http://localhost:8080/inventories", formData);
+            navigate('/inventory');
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (
@@ -122,7 +115,7 @@ export default function AddInventory() {
                             <h3 className='form__subtitle'>
                                 Quantity
                             </h3>
-                            <input required onChange={onChange} className='form__input form__input--qty' type="number" placeholder='0' name='quantity'/>
+                            <input onChange={onChange} className='form__input form__input--qty' type="number" placeholder='0' name='quantity'/>
                         </section>
                         <section className='form__value form__value--drop-down'>
                             <h3 className='form__subtitle form__subtitle--drop-down'>
