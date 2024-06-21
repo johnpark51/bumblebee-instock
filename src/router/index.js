@@ -49,7 +49,7 @@ const routes = [
   },
   {
     name: "Edit Inventory",
-    path: '/inventory/edit',
+    path: '/inventory/edit/',
     component: EditInventoryPage
   },
   {

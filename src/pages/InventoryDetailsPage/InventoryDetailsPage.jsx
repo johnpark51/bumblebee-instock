@@ -8,7 +8,6 @@ import Footer from "@/components/Footer/Footer";
 
 function InventoryDetailsPage() {
 	const { inventory, error } = useInventory();
-	console.log(inventory)
 
 	if (error) return <p>{error}</p>
 

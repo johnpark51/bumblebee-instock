@@ -11,7 +11,7 @@ export default function Header() {
                 </Link>
                 <div className="header__nav">
                     <NavLink className="header__link" to="/"><h3>Warehouses</h3></NavLink>
-                    <NavLink className="header__link" to="/"><h3>Inventory</h3></NavLink>
+                    <NavLink className="header__link" to="/inventory"><h3>Inventory</h3></NavLink>
                 </div>
             </section>
         </header>

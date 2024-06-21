@@ -1,5 +1,5 @@
 //Logical
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* STYLES */
 import "./InventoryItem.scss";
@@ -17,6 +17,12 @@ function InventoryItem({
     category,
   },
 }) {
+  
+  const navigation = useNavigate();
+  function handleClickEdit() {
+		navigation(`/inventory/edit`);
+	}
+
   return (
     <>
       <article className="inventory-details-item">
@@ -31,14 +37,14 @@ function InventoryItem({
           </h3></Link>
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">inventory item</h4>
-            <h3 className="inventory-details-item__header--mb inventory-details-item__header-link">
+            <Link to={`/inventory/${id}`}><h3 className="inventory-details-item__header--mb inventory-details-item__header-link">
               {item_name}{" "}
               <img
                 className="inventory-item__icon"
                 src={chevronIcon}
                 alt="chevron"
               />
-            </h3>
+            </h3></Link>
           </div>
           <div className="inventory-details-item__mb">
             <h4 className="inventory-details-item__header">category</h4>
@@ -97,7 +103,9 @@ function InventoryItem({
               alt="delete"
             />
           </button>
-          <button className="inventory-details-item__button">
+          <button onClick={() => {
+						handleClickEdit();
+					}} className="inventory-details-item__button">
             <img className="inventory-item__icon" src={editIcon} alt="edit" />
           </button>
         </div>
@@ -106,7 +114,9 @@ function InventoryItem({
         <button className="inventory-details-item__button">
           <img className="inventory-item__icon" src={deleteIcon} alt="delete" />
         </button>
-        <button className="inventory-details-item__button">
+        <button onClick={() => {
+						handleClickEdit();
+					}} className="inventory-details-item__button">
           <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>

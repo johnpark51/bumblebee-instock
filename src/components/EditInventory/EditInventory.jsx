@@ -8,7 +8,7 @@ export default function EditInventory() {
         <>
             <form className='form-edit'>
                 <header className='form-edit__header'>
-                    <Link to='/'>
+                    <Link to='/inventory'>
                         <img className='form-edit__arrow' src={arrow} alt="<" />
                     </Link>
                     <h1 className='form-edit__title'>
