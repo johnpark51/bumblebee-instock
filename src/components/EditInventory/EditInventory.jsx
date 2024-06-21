@@ -2,12 +2,12 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import "./EditInventory.scss";
-import arrow from "../../assets/Icons/arrow_back-24px.svg";
-import drop from "../../assets/Icons/arrow_drop_down-24px.svg";
-
-export default function EditInventory() {
+import arrow from "@/assets/Icons/arrow_back-24px.svg";
+import drop from "@/assets/Icons/arrow_drop_down-24px.svg";
+import useWarehouses from "@/utils/hooks/useWarehouses.js";
+export default function EdtInventory() {
   const { id } = useParams();
-  const [warehouses, setWarehouses] = useState(null);
+  const { warehouses, error } = useWarehouses();
   const navigation = useNavigate();
   const item_name = useRef();
   const inputDescription = useRef();
@@ -16,12 +16,10 @@ export default function EditInventory() {
   const [status, setStatus] = useState("");
 
   const handleCancel = (e) => {
-    e.preventDefault();
     navigation("/inventory");
   };
 
   const putInventory = (e) => {
-    e.preventDefault();
     if (
       status === "" ||
       inputWarehouse.current.value === "" ||
@@ -43,15 +41,6 @@ export default function EditInventory() {
     }
   };
 
-  const fetchWarehouses = () => {
-    axios.get("http://localhost:8080/warehouses").then((response) => {
-      setWarehouses(response.data);
-    });
-  };
-
-  useEffect(() => {
-    fetchWarehouses();
-  }, []);
   return (
     <>
       <form className="form-edit" onSubmit={putInventory}>
