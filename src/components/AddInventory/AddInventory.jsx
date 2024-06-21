@@ -4,10 +4,12 @@ import './AddInventory.scss'
 import arrow from '../../assets/Icons/arrow_back-24px.svg'
 import drop from '../../assets/Icons/arrow_drop_down-24px.svg'
 import axios from 'axios'
+import useWarehouse from '@/utils/hooks/useWarehouses.js'
 
 export default function AddInventory() {
 
-    const [warehouses, setWarehouses] = useState(null)
+    const {warehouses, error} = useWarehouse();
+    // const [warehouses, setWarehouses] = useState(null)
     const [formData, setFormData] = useState({
         warehouse_id: null,
         item_name: "",
@@ -16,21 +18,21 @@ export default function AddInventory() {
         category: "",
         status: "",
         quantity: null,
-      });
+    });
 
 
 
-    useEffect(() => {
-        const getWarehouse = async () => {
-            try {
-                const result = await axios.get("http://localhost:8080/warehouses")
-                setWarehouses(result.data)
-            } catch (error) {
-                console.error(error)
-            }
-        }
-        getWarehouse()
-    }, [])
+    // useEffect(() => {
+    //     const getWarehouse = async () => {
+    //         try {
+    //             const result = await axios.get("http://localhost:8080/warehouses")
+    //             setWarehouses(result.data)
+    //         } catch (error) {
+    //             console.error(error)
+    //         }
+    //     }
+    //     getWarehouse()
+    // }, [])
 
 
 
