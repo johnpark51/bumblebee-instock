@@ -44,8 +44,20 @@ class Api {
     }
   }
 
+  /* FETCH ALL INVENTORIES */
   async getInventories() {
     const route = "/inventories";
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  /* FETCH INVENTORY BY ID */
+  async getInventoriesDetails(id) {
+    const route = `/inventories/${id}`;
     try {
       const res = await this.api.get(route);
       return res.data;

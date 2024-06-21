@@ -16,7 +16,7 @@ export default function AddInventory() {
         <>
             <form onSubmit={onSubmit} className='form'>
                 <header className='form__header'>
-                    <Link className='form__back' to='/'>
+                    <Link className='form__back' to='/inventory'>
                         <img className='form__arrow' src={arrow} alt="<" />
                     </Link>
                     <h1 className='form__title'>

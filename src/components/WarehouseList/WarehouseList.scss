@@ -9,7 +9,6 @@
   background-color: $White;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   border-radius: 3px;
-
   @include desktop {
     width: 100%;
   }
@@ -64,6 +63,9 @@
     @include tablet() {
       height: 2.5rem;
       margin-right: 1rem;
+    }
+    @include desktop() {
+      width: 20rem;
     }
   }
   &__button {
