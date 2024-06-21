@@ -1,0 +1,404 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/fonts" as *;
+
+html {
+    background-color: $Light-Grey;
+}
+
+.inventory {
+    background-color: $Light-Grey;
+    display: flex;
+    justify-content: center;
+
+    &__details {
+        background-color: $White;
+        min-width: 90%;
+        border-radius: 4px;
+        margin-top: -50px;
+        box-shadow: 0px 2px 5px 0px #13182C1A;
+
+        @include tablet {
+            margin-top: 90px;
+        }
+
+        @include desktop {
+            margin-top: 90px;
+            min-width: 82.5%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+        border-bottom: 1px $Cloud solid;
+
+        @include tablet {
+            padding: 1.5rem 2.5rem;
+        }
+
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    &__container {
+        background-color: $Instock-Indigo;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            width: 80px;
+            border-radius: 20px;
+            width: 90px;
+        }
+
+        @include desktop {
+            width: 80px;
+            border-radius: 20px;
+            width: 90px;
+        }
+    }
+
+    &__edit {
+        filter: invert(100%) sepia(10%) saturate(0%) hue-rotate(238deg) brightness(200%) contrast(100%);
+        padding: 5px;
+        border-radius: 50%;
+
+        @include tablet {
+            padding: 0;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__editdis {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            color: $White;
+            margin-left: 0.313rem;
+        }
+
+        @include desktop {
+            display: flex;
+            color: $White;
+            margin-left: 0.313rem;
+        }
+    }
+
+    &__warehouse {
+        padding: 1rem 1rem;
+        border-bottom: 1px $Cloud solid;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            padding: 1rem 2.5rem;
+            border: none;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            padding: 1rem 2.5rem;
+            border: none;
+        }
+    }
+
+    &__br {
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
+
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    &__address {
+        @include tablet {
+            max-width: 150px;
+            margin-right: 2.5rem;
+        }
+
+        @include desktop {
+            max-width: 150px;
+            margin-right: 10.5rem;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            border-left: 1px $Cloud solid;
+            padding-left: 2rem;
+        }
+
+        @include desktop {
+            border-left: 1px $Cloud solid;
+            padding-left: 2rem;
+            gap: 8rem;
+        }
+    }
+
+    &__name {
+        width: 50%;
+
+        @include tablet {
+            width: 9.375rem;
+            max-width: 150px;
+        }
+
+        @include desktop {
+            width: 9.375rem;
+            max-width: 150px;
+        }
+    }
+
+    &__information {
+        width: 50%;
+
+        @include tablet {
+            width: 9.375rem;
+            max-width: 150px;
+        }
+
+        @include desktop {
+            width: 9.375rem;
+            max-width: 150px;
+        }
+    }
+
+    &__paragraph {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        color: $Slate;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        font-size: 0.8rem;
+        color: $Graphite;
+        line-height: 1.125rem;
+
+        &--qty {
+            padding-right: 2rem;
+        }
+    }
+
+    &__items {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            padding: 0;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__block {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            background-color: $Light-Grey;
+            padding: 0.25rem 2.5rem;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            background-color: $Light-Grey;
+            padding: 0.25rem 2.5rem;
+        }
+    }
+
+    &__three {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.75rem;
+
+        @include desktop {
+            gap: 6.5rem;
+        }
+    }
+
+    &__twotop {
+        display: flex;
+        justify-content: space-between;
+        gap: 35px;
+
+        @include desktop {
+            gap: 7rem;
+        }
+    }
+
+    &__sort {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__mobile {
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__tablet {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            padding: 1rem 2.5rem;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            display: flex;
+            padding: 1rem 2.5rem;
+            justify-content: space-between;
+        }
+    }
+
+    &__itcas {
+        display: flex;
+        justify-content: space-between;
+        gap: 4.063rem;
+
+        @include desktop  {
+            gap: 8rem;
+        }
+    }
+
+    &__two {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5rem;
+
+        @include desktop {
+            gap: 7rem;
+        }
+    }
+
+    &__buttonsmob {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__itstat {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        width: 50%;
+    }
+
+    &__link {
+        display: flex;
+        color: $Instock-Indigo;
+        align-items: center;
+        font-size: 0.8rem;
+        line-height: 1.125rem;
+    }
+
+    &__status {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    &__stock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 1.5rem;
+        // width: 4rem;
+        padding: 0 1rem;
+        background-color: rgba(51, 170, 51, .07);
+        border-radius: 1.125rem;
+    }
+
+    &__tag {
+        color: $Green;
+        font-size: 0.8rem;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+
+        @include desktop {
+            font-size: 0.875rem;
+        }
+    }
+
+    &__catqua {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    &__category {
+        width: 50%;
+    }
+
+    &__quantity {
+        width: 50%;
+    }
+
+    &__buttons {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+}

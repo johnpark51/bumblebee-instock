@@ -1,0 +1,241 @@
+@use "@/styles/partials/variables" as *;
+@use "@/styles/partials/mixins" as *;
+@use "@/styles/partials/fonts" as *;
+@use "@/styles/partials/global" as *;
+@use "@/styles/partials/resets" as *;
+
+.form-edit {
+  max-width: 1050px;
+  width: 90%;
+  background-color: $White;
+  margin-top: -4.15rem;
+  box-shadow: 0px 2px 5px 0px #13182c1a;
+  border-radius: 0.25rem;
+
+  @include tablet {
+    margin-top: -6rem;
+  }
+
+  &__header {
+    padding: 2rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid $Cloud;
+
+    @include tablet {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__arrow {
+    padding-top: 0.5rem;
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+
+  &__main {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__details {
+    padding: 0 1.25rem;
+    margin: 1.25rem 0;
+    border-bottom: 1px solid $Cloud;
+
+    @include tablet {
+      width: 50%;
+      border-bottom: none;
+      border-right: 1px solid $Cloud;
+      padding: 0 2rem;
+    }
+  }
+
+  &__subheader {
+    margin-bottom: 1rem;
+  }
+
+  &__value {
+    margin-bottom: 1rem;
+    &--drop-down {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 0.25rem;
+
+    &--drop-down {
+      position: relative;
+      bottom: 0.5rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid $Cloud;
+    padding: 0.5rem 1rem;
+    color: $Slate;
+    font-size: 0.7rem;
+    font-family: "Titillium";
+
+    &::placeholder {
+      font-size: 0.725rem;
+    }
+
+    &--desc {
+      padding: 0.5rem 0 5rem 1rem;
+
+      &::placeholder {
+        word-wrap: normal;
+      }
+    }
+
+    &--category {
+      position: absolute;
+      width: 78.8611111112%;
+
+      @include tablet {
+        width: 37%;
+      }
+
+      @include desktop {
+        width: 36.25%;
+        max-width: 460px;
+      }
+    }
+
+    &--qty {
+      @include desktop {
+        width: 27%;
+      }
+    }
+  }
+
+  &__drop-down {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__option {
+    &-img {
+      background-color: white;
+      position: relative;
+      padding: 0px 0.313rem;
+      right: 0.273rem;
+    }
+  }
+
+  &__select {
+    &::placeholder {
+      color: red;
+    }
+  }
+
+  &__status {
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 65%;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__availability {
+    padding: 0 1.25rem;
+    margin: 1.25rem 0;
+
+    @include tablet {
+      width: 50%;
+      margin: 0;
+      padding: 0 2rem;
+      margin: 1.25rem 0;
+    }
+  }
+
+  &__rad {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__holder {
+    width: 50%;
+    display: flex;
+  }
+
+  &__radio {
+    &:active {
+      color: $Graphite;
+    }
+  }
+
+  &__lab {
+    color: $Slate;
+    font-size: 0.7rem;
+    font-family: "Titillium";
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+  }
+
+  &__buttons {
+    display: flex;
+    padding: 1.25rem;
+    background-color: $Light-Grey;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    padding: 0.75rem 0.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid $Cloud;
+    background-color: $White;
+    width: 47.5%;
+
+    @include tablet {
+      width: 40%;
+    }
+
+    &--add {
+      background-color: $Instock-Indigo;
+      color: $White;
+
+      @include tablet {
+        width: 50%;
+      }
+    }
+  }
+}
+
