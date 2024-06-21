@@ -54,7 +54,7 @@ function EditWarehouse() {
 	};
 
   function handleCancel(e) {
-    e.preventDefault();
+    // e.preventDefault();
     navigation("/");
   };
 
