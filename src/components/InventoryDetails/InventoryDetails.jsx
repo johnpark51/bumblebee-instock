@@ -37,7 +37,7 @@ function InventoryDetails({
 				<section className="inventory-details__left">
 					<h4 className="inventory-details__subheaders">ITEM DESCRIPTION:</h4>
 					<p className="inventory-details__text">{description}</p>
-					<h4 className="inventory-details__subheaders">CATEGORY:</h4>
+					<h4 className="inventory-details__subheaders inventory-details__subheaders--category">CATEGORY:</h4>
 					<p className="inventory-details__text">{category}</p>
 				</section>
 				<section className="inventory-details__right">
@@ -55,7 +55,7 @@ function InventoryDetails({
 						</section>
 						<section className="inventory-details__quantity-section">
 							<h4 className="inventory-details__subheaders">QUANTITY:</h4>
-							<p className="inventory-details__text">{quantity}</p>
+							<p className="inventory-details__text inventory-details__text--quantity">{quantity}</p>
 						</section>
 					</section>
 					<h4 className="inventory-details__subheaders">WAREHOUSE:</h4>
