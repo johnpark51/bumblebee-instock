@@ -32,7 +32,7 @@ function WarehouseDetailsListItem({
       />
 			<article className="warehouse-details-item">
 				<div className="warehouse-details-item__container--warehouse">
-          <Link to={`/inventory/edit/${id}`}>
+          <Link className="warehouse-details-item__link" to={`/inventory/edit/${id}`}>
 					<h3 className="warehouse-details-item__header--tb warehouse-details-item__header-link">
 						{item_name}{" "}
 						<img
