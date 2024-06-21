@@ -17,12 +17,15 @@
     flex-direction: column;
     padding: 1rem;
     border-bottom: 1px solid $Cloud;
-    @include tablet() {
+    @include tablet {
       flex-direction: row;
       align-items: center;
       padding: 0.7rem 2rem;
       justify-content: space-between;
       border-bottom: 0;
+    }
+    @include desktop {
+      padding: 1rem 2rem;
     }
     &--left {
       display: flex;
@@ -113,7 +116,7 @@
   @include tablet() {
     display: flex;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0.75rem 2rem;
     margin: 0;
     height: 2.5rem;
   }
