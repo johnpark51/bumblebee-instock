@@ -9,7 +9,6 @@ const useInventories = () => {
     getInventories();
   }, []);
 
-  //Fetch all inventories
   const getInventories = async () => {
     try {
       const inventories = await api.getInventories();

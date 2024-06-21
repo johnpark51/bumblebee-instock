@@ -23,12 +23,10 @@ export default function AddInventory() {
 
     const onChange = (e) => {
         const { name, value } = e.target
-        console.log(name, value);
         setFormData({
             ...formData,
             [name]: value,
         })
-        console.log(formData);
     }
 
     const onSubmit = async (e) => {

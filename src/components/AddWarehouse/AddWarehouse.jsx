@@ -26,7 +26,6 @@ function AddWarehouse() {
       const part3 = match[4] ? "-" + match[4] : "";
       return [part0, part1, part2, part3].join("");
     } else {
-		// alert("submit using proper format")
 	}
   };
 

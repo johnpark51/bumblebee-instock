@@ -11,7 +11,6 @@ function useInventory() {
     getInventory(id)
   }, [id]);
 
-  /* FETCH WAREHOUSE BY ID */
   async function getInventory(id) {
     try {
       const inventory = await api.getInventoriesDetails(id);

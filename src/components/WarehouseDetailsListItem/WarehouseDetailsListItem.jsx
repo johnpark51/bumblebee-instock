@@ -1,4 +1,3 @@
-/* STYLES */
 import "./WarehouseDetailsListItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
