@@ -3,6 +3,9 @@
 @use "@/styles/partials/mixins" as *;
 
 .warehouse-details-item {
+  &__link {
+    text-decoration: none;
+  }
   display: flex;
   padding: 1rem 1rem;
   justify-content: space-between;
@@ -17,6 +20,7 @@
   &__header-link {
     transition: all 0.15s ease-in-out;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
       color: $Graphite;
     }
@@ -27,6 +31,7 @@
     line-height: 1rem;
     text-transform: uppercase;
     margin-top: 1rem;
+    text-decoration: none;
     &--mb {
       display: flex;
       align-items: center;
@@ -34,14 +39,17 @@
       font-size: 0.813rem;
       line-height: 1.25rem;
       cursor: pointer;
+      text-decoration: none;
     }
     &--tb {
       display: none;
       color: $Instock-Indigo;
       font-size: 0.813rem;
       line-height: 1.25rem;
+      text-decoration: none;
       @include tablet() {
         display: flex;
+        text-decoration: none;
       }
     }
   }
