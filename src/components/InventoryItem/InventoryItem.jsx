@@ -15,7 +15,6 @@ function InventoryItem({
     quantity,
     item_name,
     category,
-    description,
     warehouse_id,
   },
 }) {
