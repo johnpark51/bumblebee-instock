@@ -10,21 +10,13 @@ import DeleteInventory from "@/components/DeleteInventory/DeleteInventory";
 import { useState } from "react";
 
 function InventoryItem({
-  inventory: {
-    id,
-    warehouse_name,
-    status,
-    quantity,
-    item_name,
-    category,
-    warehouse_id,
-  },
+  inventory: { id, warehouse_name, status, quantity, item_name, category },
 }) {
   const [openModal, setOpenModal] = useState(false);
 
   const navigation = useNavigate();
   const handleEdit = () => {
-    navigation(`/inventory/edit/${id}`, { state: { warehouse_id } });
+    navigation(`/inventory/edit/${id}`);
   };
   return (
     <>
@@ -36,7 +28,10 @@ function InventoryItem({
       />
       <article className="inventory-details-item">
         <div className="inventory-details-item__container--inventory">
-          <Link className="inventory-details-item__header--link" to={`/inventory/${id}`}>
+          <Link
+            className="inventory-details-item__header--link"
+            to={`/inventory/${id}`}
+          >
             <h3 className="inventory-details-item__header--tb inventory-details-item__header-link">
               {item_name}{" "}
               <img
