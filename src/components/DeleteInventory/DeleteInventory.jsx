@@ -4,7 +4,7 @@ import axios from "axios";
 function DeleteInventory({ open, onClose, id, item_name }) {
 
 	const deleteInventory = (event) => {
-		axios.delete(`http://localhost:8080/inventory/${id}`);
+		axios.delete(`http://localhost:8080/inventories/${id}`);
 	};
 
 	if (!open) return null;
