@@ -63,7 +63,7 @@ export default function EdtInventory() {
     <>
       <form className="form-edit" onSubmit={putInventory}>
         <header className="form-edit__header">
-          <Link to="/">
+          <Link to="/inventory">
             <img className="form-edit__arrow" src={arrow} alt="<" />
           </Link>
           <h1 className="form-edit__title">Edit Inventory Item</h1>

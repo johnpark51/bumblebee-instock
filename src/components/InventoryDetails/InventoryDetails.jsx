@@ -16,9 +16,9 @@ function InventoryDetails({
 }) {
 	const navigation = useNavigate();
 
-	function handleEdit() {
-		navigation(`/inventory/edit`);
-	}
+	const handleEdit = () => {
+		navigation(`/inventory/edit/${id}`);
+	};
 
 	return (
 		<main className="inventory-details">
@@ -27,11 +27,7 @@ function InventoryDetails({
 					<img className="inventory-details__arrow" src={arrowLeft}></img>
 				</Link>
 				<h1 className="inventory-details__title">{item_name}</h1>
-				<button
-					onClick={() => {
-						handleEdit();
-					}}
-					className="inventory-details__button">
+				<button onClick={handleEdit} className="inventory-details__button">
 					<EditIcon color="#FFFFFF" />{" "}
 					<span className="inventory-details__button-text">Edit</span>
 				</button>

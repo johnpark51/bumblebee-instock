@@ -29,7 +29,7 @@ function InventoryList() {
             <input
               className="inventory-details-list__search"
               type="search"
-              placeholder="search"
+              placeholder="Search..."
             />
             <button
               onClick={() => {
