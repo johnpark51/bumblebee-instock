@@ -73,7 +73,7 @@ function AddWarehouse() {
       <section className="add-warehouse__bottom">
         <section className="add-warehouse__warehouse">
           <h2 className="add-warehouse__header">Warehouse Details</h2>
-          <label className="add-warehouse__subheader">Warehouse Name</label>
+          <h3 className="add-warehouse__subheader">Warehouse Name</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -82,7 +82,7 @@ function AddWarehouse() {
             ref={inputWarehouse}
 			required
           ></input>
-          <label className="add-warehouse__subheader">Street Address</label>
+          <h3 className="add-warehouse__subheader">Street Address</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -91,7 +91,7 @@ function AddWarehouse() {
             ref={inputAddress}
 			required
           ></input>
-          <label className="add-warehouse__subheader">City</label>
+          <h3 className="add-warehouse__subheader">City</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -100,7 +100,7 @@ function AddWarehouse() {
             ref={inputCity}
 			required
           ></input>
-          <label className="add-warehouse__subheader">Country</label>
+          <h3 className="add-warehouse__subheader">Country</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -113,7 +113,7 @@ function AddWarehouse() {
 		<div className="border border--middle"></div>
         <section className="add-warehouse__contact">
           <h2 className="add-warehouse__header">Contact Details</h2>
-          <label className="add-warehouse__subheader">Contact Name</label>
+          <h3 className="add-warehouse__subheader">Contact Name</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -122,7 +122,7 @@ function AddWarehouse() {
             ref={inputContact}
 			required
           ></input>
-          <label className="add-warehouse__subheader">Position</label>
+          <h3 className="add-warehouse__subheader">Position</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -131,7 +131,7 @@ function AddWarehouse() {
             ref={inputPosition}
 			required
           ></input>
-          <label className="add-warehouse__subheader">Phone Number</label>
+          <h3 className="add-warehouse__subheader">Phone Number</h3>
           <input
             className="add-warehouse__input"
             type="text"
@@ -141,7 +141,7 @@ function AddWarehouse() {
             onChange={handleInputChange}
 			required
           ></input>
-          <label className="add-warehouse__subheader">Email</label>
+          <h3 className="add-warehouse__subheader">Email</h3>
           <input
             className="add-warehouse__input"
             type="text"

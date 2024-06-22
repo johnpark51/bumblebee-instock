@@ -69,9 +69,8 @@
     &__value {
         margin-bottom: 1rem;
         &--drop-down {
-            margin-bottom: 2rem;
+            margin: 1.5rem 0
         }
-
         &--remove {
             display: none;
         }
@@ -109,12 +108,10 @@
 
             @include tablet {
                 width: 37%;
-                // max-width: 284.16px;
             }
 
             @include desktop {
                 width: 36.25%;
-                max-width: 460px;
             }
         }
 
@@ -158,10 +155,6 @@
 
         @include desktop {
             width: 50%;
-        }
-
-        &--remove {
-            margin-bottom: 1rem;
         }
     }
 

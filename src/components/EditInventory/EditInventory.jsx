@@ -152,7 +152,7 @@ export default function EditInventory() {
         </section>
         <section className="form-edit__availability">
           <h2 className="form-edit__subheader">Item Availability</h2>
-          <section className="form-edit__status">
+          <section className={`form-edit__status ${formData.status !== "In Stock" ? "form-edit__status--bottom" : ""}`}>
             <h3 className="form-edit__subtitle">Status</h3>
             <div className="form-edit__rad">
               <div className="form-edit__holder">
@@ -182,7 +182,7 @@ export default function EditInventory() {
             </div>
           </section>
           {formData.status === "In Stock" && (
-            <section className="form__value">
+            <section className="form__value form__value--qty">
               <h3 className="form__subtitle">Quantity</h3>
               <input
                 onChange={handleInputChange}

@@ -71,28 +71,28 @@ function EditWarehouse() {
 			<section className="edit-warehouse__bottom">
 				<section className="edit-warehouse__warehouse">
 					<h2 className="edit-warehouse__header">Warehouse Details</h2>
-					<label className="edit-warehouse__subheader">Warehouse Name</label>
+					<h3 className="edit-warehouse__subheader">Warehouse Name</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder={warehouse.warehouse_name}
 						name="warehouseName"
 						ref={inputWarehouse}></input>
-					<label className="edit-warehouse__subheader">Street Address</label>
+					<h3 className="edit-warehouse__subheader">Street Address</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder={warehouse.address}
 						name="streetAddress"
 						ref={inputAddress}></input>
-					<label className="edit-warehouse__subheader">City</label>
+					<h3 className="edit-warehouse__subheader">City</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder={warehouse.city}
 						name="city"
 						ref={inputCity}></input>
-					<label className="edit-warehouse__subheader">Country</label>
+					<h3 className="edit-warehouse__subheader">Country</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
@@ -103,21 +103,21 @@ function EditWarehouse() {
 				<div className="border border--middle"></div>
 				<section className="edit-warehouse__contact">
 					<h2 className="edit-warehouse__header">Contact Details</h2>
-					<label className="edit-warehouse__subheader">Contact Name</label>
+					<h3 className="edit-warehouse__subheader">Contact Name</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder={warehouse.contact_name}
 						name="contactName"
 						ref={inputContact}></input>
-					<label className="edit-warehouse__subheader">Position</label>
+					<h3 className="edit-warehouse__subheader">Position</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
 						placeholder={warehouse.contact_position}
 						name="position"
 						ref={inputPosition}></input>
-					<label className="edit-warehouse__subheader">Phone Number</label>
+					<h3 className="edit-warehouse__subheader">Phone Number</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"
@@ -125,7 +125,7 @@ function EditWarehouse() {
 						name="phoneNumber"
 						value={phoneNumber}
 						onChange={handleInputChange}></input>
-					<label className="edit-warehouse__subheader">Email</label>
+					<h3 className="edit-warehouse__subheader">Email</h3>
 					<input
 						className="edit-warehouse__input"
 						type="text"

@@ -1,11 +1,8 @@
-/* LOGIC */
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-/* COMPONENTS */
 import DeleteInventory from "@/components/DeleteInventory/DeleteInventory";
 
-/* STYLES */
 import "./WarehouseDetailsListItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
