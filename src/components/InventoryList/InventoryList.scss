@@ -66,7 +66,7 @@
       width: 11rem;
     }
     @include desktop() {
-      width: 20rem;
+      width: 18rem;
     }
   }
   &__button {
@@ -116,6 +116,7 @@
   @include tablet() {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0.75rem 2rem;
     margin: 0;
     height: 2.5rem;
@@ -141,6 +142,12 @@
       }
     }
   }
+
+  &__icon {
+    display: flex;
+    height: 1rem;
+  }
+
   &__container {
     &--inventory-details {
       @include tablet() {
