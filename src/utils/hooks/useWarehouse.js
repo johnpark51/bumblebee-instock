@@ -5,22 +5,33 @@ import api from "@/utils/api/api.js";
 function useWarehouse() {
   const { id } = useParams();
   const [ warehouse, setWarehouse ] = useState(null);
+  const [ inventories, setInventories ] = useState(null);
   const [ error, setError ] = useState(null);
 
   useEffect(() => {
-    getWarehouse(id)
+    getWarehouse(id);
+    getWarehouseInventory(id);
   }, [id]);
 
   async function getWarehouse(id) {
     try {
-      const warehouse = await api.getWarehouseDetails(id);
+      const warehouse = await api.getWarehouse(id);
       setWarehouse(warehouse);
     } catch (e) {
       setError(e.message);
     };
   };
 
-  return { warehouse, error };
+  async function getWarehouseInventory(id) {
+    try {
+      const inventory = await api.getWarehouseInventories(id);
+      setInventories(inventory)
+    } catch (e) {
+      setError(e.message);
+    };
+  };
+
+  return { warehouse, inventories, error };
 
 };
 
