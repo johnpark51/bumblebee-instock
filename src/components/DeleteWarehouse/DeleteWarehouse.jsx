@@ -4,7 +4,7 @@ import axios from "axios";
 function DeleteWarehouse({ open, onClose, id, warehouse_name }) {
 
 	const deleteWarehouse = (event) => {
-		axios.delete(`http://localhost:8080/warehouses/${id}`);
+		axios.delete(`http://localhost:8080/api/warehouses/${id}`);
 	};
 
 	if (!open) return null;

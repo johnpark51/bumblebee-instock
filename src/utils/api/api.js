@@ -12,7 +12,7 @@ class Api {
   }
 
   async getWarehouses(sort_by, asc) {
-    const route = `/warehouses?sort_by=${sort_by}&order_by=${asc}`;
+    const route = `/api/warehouses?sort_by=${sort_by}&order_by=${asc}`;
     try {
       const res = await this.api.get(route);
       return res.data;
@@ -22,7 +22,7 @@ class Api {
   }
 
   async getWarehouse(id) {
-    const route = `/warehouses/${id}`;
+    const route = `/api/warehouses/${id}`;
     try {
       const res = await this.api.get(route);
       return res.data;
@@ -32,7 +32,7 @@ class Api {
   }
 
   async getWarehouseDetails(id) {
-    const route = `/warehouses/details/${id}`;
+    const route = `/api/warehouses/details/${id}`;
     try {
       const res = await this.api.get(route);
       return res.data;
@@ -41,8 +41,18 @@ class Api {
     }
   }
 
+  async getWarehouseInventories(id) {
+    const route = `/api/warehouses/${id}/inventories`;
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
   async getInventories(sort_by, asc) {
-    const route = `/inventories?sort_by=${sort_by}&order_by=${asc}`;
+    const route = `/api/inventories?sort_by=${sort_by}&order_by=${asc}`;
     try {
       const res = await this.api.get(route);
       return res.data;
@@ -52,7 +62,7 @@ class Api {
   }
 
   async getInventoriesDetails(id) {
-    const route = `/inventories/${id}`;
+    const route = `/api/inventories/${id}`;
     try {
       const res = await this.api.get(route);
       return res.data;

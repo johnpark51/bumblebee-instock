@@ -72,7 +72,7 @@ export default function EditInventory() {
     };
 
     axios
-      .put(`http://localhost:8080/inventories/${id}`, updatedInventory)
+      .put(`http://localhost:8080/api/inventories/${id}`, updatedInventory)
       .then(() => navigate("/inventory"))
       .catch((err) => console.error(err));
   };

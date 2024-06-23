@@ -30,7 +30,7 @@ export default function AddInventory() {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axios.post("http://localhost:8080/inventories", formData);
+      await axios.post("http://localhost:8080/api/inventories", formData);
       navigate("/inventory");
     } catch (error) {
       console.error(error);

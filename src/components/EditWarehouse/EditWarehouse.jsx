@@ -62,7 +62,7 @@ function EditWarehouse() {
 			contact_phone: phoneNumber,
 			contact_email: inputEmail.current.value,
 		};
-		axios.put(`http://localhost:8080/warehouses/${id}`, updatedWarehouse);
+		axios.put(`http://localhost:8080/api/warehouses/${id}`, updatedWarehouse);
     navigation("/");
 	};
 
