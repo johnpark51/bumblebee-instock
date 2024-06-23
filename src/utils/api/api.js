@@ -11,8 +11,8 @@ class Api {
     });
   }
 
-  async getWarehouses() {
-    const route = "/warehouses";
+  async getWarehouses(sort_by) {
+    const route = `/warehouses?sort_by=${sort_by}`;
     try {
       const res = await this.api.get(route);
       return res.data;
