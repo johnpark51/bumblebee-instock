@@ -41,6 +41,16 @@ class Api {
     }
   }
 
+  async getWarehouseInventories(id) {
+    const route = `/warehouses/${id}/inventories`;
+    try {
+      const res = await this.api.get(route);
+      return res.data;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
   async getInventories(sort_by, asc) {
     const route = `/inventories?sort_by=${sort_by}&order_by=${asc}`;
     try {
