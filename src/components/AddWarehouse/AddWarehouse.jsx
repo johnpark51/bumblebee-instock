@@ -25,8 +25,8 @@ function AddWarehouse() {
       const part2 = match[3] ? ") " + match[3] : "";
       const part3 = match[4] ? "-" + match[4] : "";
       return [part0, part1, part2, part3].join("");
-    } else {
-	}
+    } 
+    return phoneNumber
   };
 
   const handleInputChange = (event) => {
