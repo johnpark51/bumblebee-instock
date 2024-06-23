@@ -11,9 +11,18 @@
   margin-top: -4.15rem;
   box-shadow: 0px 2px 5px 0px #13182c1a;
   border-radius: 0.25rem;
+  max-width: 288px;
+  transition: all 0.15s ease-in-out;
 
   @include tablet {
     margin-top: -6rem;
+    max-width: 691.2px;
+    transition: all 0.15s ease-in-out;
+  }
+
+  @include desktop {
+    max-width: 1050px;
+    transition: all 0.15s ease-in-out;
   }
 
   &__header {
@@ -106,15 +115,16 @@
 
     &--category {
       position: absolute;
-      width: 78.8611111112%;
+      width: 85.8611111112%;
 
       @include tablet {
-        width: 37%;
+        width: 41%;
       }
 
       @include desktop {
-        width: 36.25%;
+        width: 100%;
         max-width: 460px;
+        transition: all 0.15s ease-in-out;
       }
     }
 
