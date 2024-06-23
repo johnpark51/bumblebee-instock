@@ -8,7 +8,7 @@ import Footer from "@/components/Footer/Footer";
 
 function WarehouseDetailsPage() {
 
-  const { warehouse, error } = useWarehouse();
+  const { warehouse, inventories, error } = useWarehouse();
 
   if (error) return <p>{error}</p>
 
@@ -16,7 +16,7 @@ function WarehouseDetailsPage() {
     <>
       <Header />
       <main className="warehouse-details-main" data-aos="fade-up">
-        { warehouse && <WarehouseDetailsList warehouse={warehouse} /> }
+        { warehouse && inventories && <WarehouseDetailsList warehouse={warehouse} inventories={inventories} /> }
       </main>
       <Footer />
     </>

@@ -17,9 +17,9 @@ function WarehouseDetailsList({
 		contact_name,
 		contact_position,
 		contact_phone,
-		contact_email,
-		inventories,
+		contact_email
 	},
+  inventories
 }) {
 	const navigation = useNavigate();
 
