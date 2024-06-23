@@ -4,13 +4,18 @@
 
 .inventory-details-list {
   width: 90%;
-  max-width: 1050px;
+  max-width: 288px;
   margin: auto;
   background-color: $White;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+
+  @include tablet {
+    max-width: 689.2px;
+  }
   @include desktop() {
     width: 100%;
+    max-width: 1050px;
   }
   &__top {
     display: flex;

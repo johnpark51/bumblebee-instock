@@ -16,13 +16,16 @@
         align-items: center;
         padding: 1rem 0rem 5.5rem 0rem;
         width: 90%;
-        max-width: 1280px;
+        max-width: 288px;
+        transition: all 0.15s ease-in-out;
     
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 2rem 0rem 7rem 0rem;
+            max-width: 691.2px;
+            transition: all 0.15s ease-in-out;
         }
     
         @include desktop {
@@ -31,6 +34,7 @@
             align-items: center;
             padding: 2rem 0rem 8rem 0rem;
             max-width: 1050px;
+            transition: all 0.15s ease-in-out;
         }
     }
 
