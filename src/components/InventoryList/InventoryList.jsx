@@ -1,17 +1,26 @@
 import useInventories from "@/utils/hooks/useInventories";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 import "./InventoryList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 
 import InventoryItem from "@/components/InventoryItem/InventoryItem";
 
 function InventoryList() {
-	const navigation = useNavigate();
-	const { inventories, error } = useInventories();
+  const [sort, setSort] = useState({ sort: "name", asc: "asc" });
+  const navigation = useNavigate();
+  const { inventories, error } = useInventories(sort.sort, sort.asc);
 
   function handleAddWarehouse() {
     navigation("/inventory/add");
+  }
+
+  function handleSort(sortBy) {
+    setSort((prevSortBy) => {
+      const sameSort = prevSortBy.sort === sortBy;
+      const order = sameSort && prevSortBy.asc === "asc" ? "desc" : "asc";
+      return { sort: sortBy, asc: order };
+    });
   }
 
   if (error) return <p>{error}</p>;
@@ -40,72 +49,87 @@ function InventoryList() {
           </div>
         </div>
 
-				<section className="inventory-details-filter">
-					<div className="inventory-details-filter__container--inventory-details">
-						<h4 className="inventory-details-filter__header">
-							inventory item{" "}
-							<img
-								className="inventory-details-filter__icon"
-								src={sortIcon}
-								alt="sort"
-							/>
-						</h4>
-					</div>
-					<div className="inventory-details-filter__container--address">
-						<h4 className="inventory-details-filter__header">
-							category{" "}
-							<img
-								className="inventory-details-filter__icon"
-								src={sortIcon}
-								alt="sort"
-							/>
-						</h4>
-					</div>
-					<div className="inventory-details-filter__container--contact-name">
-						<h4 className="inventory-details-filter__header">
-							status{" "}
-							<img
-								className="inventory-details-filter__icon"
-								src={sortIcon}
-								alt="sort"
-							/>
-						</h4>
-					</div>
-					<div className="inventory-details-filter__container--contact-info">
-						<h4 className="inventory-details-filter__header">
-							qty{" "}
-							<img
-								className="inventory-details-filter__icon"
-								src={sortIcon}
-								alt="sort"
-							/>
-						</h4>
-					</div>
-					<div className="inventory-details-filter__container--contact-ware">
-						<h4 className="inventory-details-filter__header">
-							warehouse{" "}
-							<img
-								className="inventory-details-filter__icon"
-								src={sortIcon}
-								alt="sort"
-							/>
-						</h4>
-					</div>
-					<div className="inventory-details-filter__container--actions">
-						<h4 className="inventory-details-filter__header--actions">
-							actions
-						</h4>
-					</div>
-				</section>
-				<div className="growth">
-					{inventories &&
-						inventories.map((inventory) => {
-							return <InventoryItem key={inventory.id} inventory={inventory} />;
-						})}
-				</div>
-			</section>
-		</>
-	);
+        <section className="inventory-details-filter">
+          <div
+            className="inventory-details-filter__container--inventory-details"
+            onClick={() => handleSort("name")}
+          >
+            <h4 className="inventory-details-filter__header">
+              inventory item{" "}
+              <img
+                className="inventory-details-filter__icon"
+                src={sortIcon}
+                alt="sort"
+              />
+            </h4>
+          </div>
+          <div
+            className="inventory-details-filter__container--address"
+            onClick={() => handleSort("category")}
+          >
+            <h4 className="inventory-details-filter__header">
+              category{" "}
+              <img
+                className="inventory-details-filter__icon"
+                src={sortIcon}
+                alt="sort"
+              />
+            </h4>
+          </div>
+          <div
+            className="inventory-details-filter__container--contact-name"
+            onClick={() => handleSort("status")}
+          >
+            <h4 className="inventory-details-filter__header">
+              status{" "}
+              <img
+                className="inventory-details-filter__icon"
+                src={sortIcon}
+                alt="sort"
+              />
+            </h4>
+          </div>
+          <div
+            className="inventory-details-filter__container--contact-info"
+            onClick={() => handleSort("quantity")}
+          >
+            <h4 className="inventory-details-filter__header">
+              qty{" "}
+              <img
+                className="inventory-details-filter__icon"
+                src={sortIcon}
+                alt="sort"
+              />
+            </h4>
+          </div>
+          <div
+            className="inventory-details-filter__container--contact-ware"
+            onClick={() => handleSort("warehouse")}
+          >
+            <h4 className="inventory-details-filter__header">
+              warehouse{" "}
+              <img
+                className="inventory-details-filter__icon"
+                src={sortIcon}
+                alt="sort"
+              />
+            </h4>
+          </div>
+          <div className="inventory-details-filter__container--actions">
+            <h4 className="inventory-details-filter__header--actions">
+              actions
+            </h4>
+          </div>
+        </section>
+        <div className="growth">
+          {inventories &&
+            inventories.map((inventory) => {
+              return <InventoryItem key={inventory.id} inventory={inventory} />;
+            })}
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default InventoryList;

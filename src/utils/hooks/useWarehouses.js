@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import api from "@/utils/api/api.js";
 
-function useWarehouses(sort) {
+function useWarehouses(sort, asc) {
   const [warehouses, setWarehouses] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getWarehouses(sort);
-  }, [sort]);
+    getWarehouses(sort, asc);
+  }, [sort, asc]);
 
-  async function getWarehouses(sort) {
+  async function getWarehouses(sort, asc) {
     try {
-      const warehouses = await api.getWarehouses(sort);
+      const warehouses = await api.getWarehouses(sort, asc);
       setWarehouses(warehouses);
     } catch (e) {
       setError(e.message);

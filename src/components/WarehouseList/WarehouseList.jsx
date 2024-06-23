@@ -8,16 +8,22 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
 
 function WarehouseList() {
-  const [sort, setSort] = useState("");
+  const [sort, setSort] = useState({ sort: "name", asc: "asc" });
   const navigation = useNavigate();
-  const { warehouses, error } = useWarehouses(sort);
+  const { warehouses, error } = useWarehouses(sort.sort, sort.asc);
 
   function handleAddWarehouse() {
     navigation("/warehouse/add");
   }
 
   function handleSort(sortBy) {
-    setSort(sortBy);
+    setSort((prevSortBy) => {
+      const sameSort = prevSortBy.sort === sortBy;
+      console.log(sameSort);
+      const order = sameSort && prevSortBy.asc === "asc" ? "desc" : "asc";
+      console.log(order);
+      return { sort: sortBy, asc: order };
+    });
   }
 
   if (error) return <p>{error}</p>;
