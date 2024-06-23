@@ -8,13 +8,19 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 import AnimatedWarehouseItem from "@/components/WarehouseItem/AnimatedWarehouseItem";
 
 function WarehouseList() {
+
   const [sort, setSort] = useState({ sort: "name", asc: "asc" });
+  const [query, setQuery] = useState("");
   const navigation = useNavigate();
   const { warehouses, error } = useWarehouses(sort.sort, sort.asc);
 
   function handleAddWarehouse() {
     navigation("/warehouse/add");
   }
+
+  function handleQuery(e) {
+    setQuery(e.target.value);
+  };
 
   function handleSort(sortBy) {
     setSort((prevSortBy) => {
@@ -25,6 +31,14 @@ function WarehouseList() {
       return { sort: sortBy, asc: order };
     });
   }
+
+  const filteredWarehouses = query === ''
+    ? warehouses
+    : warehouses.filter((warehouse) =>
+        Object.values(warehouse).some((value) =>
+          value.toString().toLowerCase().includes(query.toLowerCase())
+        )
+      );
 
   if (error) return <p>{error}</p>;
 
@@ -38,6 +52,8 @@ function WarehouseList() {
           <input
             className="warehouse-list__search"
             type="search"
+            value={query}
+            onChange={handleQuery}
             placeholder="Search..."
           />
           <button
@@ -95,7 +111,7 @@ function WarehouseList() {
       </section>
 
       {warehouses &&
-        warehouses.map((warehouse) => {
+        filteredWarehouses.map((warehouse) => {
           return <AnimatedWarehouseItem key={warehouse.id} warehouse={warehouse} />;
         })}
     </section>

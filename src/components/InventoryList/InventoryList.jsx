@@ -7,13 +7,19 @@ import sortIcon from "@/assets/Icons/sort-24px.svg";
 import AnimatedInventoryItem from "@/components/InventoryItem/AnimatedInventoryItem";
 
 function InventoryList() {
+
   const [sort, setSort] = useState({ sort: "name", asc: "asc" });
+  const [query, setQuery] = useState("");
   const navigation = useNavigate();
   const { inventories, error } = useInventories(sort.sort, sort.asc);
 
   function handleAddWarehouse() {
     navigation("/inventory/add");
-  }
+  };
+
+  function handleQuery(e) {
+    setQuery(e.target.value);
+  };
 
   function handleSort(sortBy) {
     setSort((prevSortBy) => {
@@ -21,7 +27,15 @@ function InventoryList() {
       const order = sameSort && prevSortBy.asc === "asc" ? "desc" : "asc";
       return { sort: sortBy, asc: order };
     });
-  }
+  };
+
+  const filteredInventories = query === ''
+    ? inventories
+    : inventories.filter((inventory) =>
+        Object.values(inventory).some((value) =>
+          value.toString().toLowerCase().includes(query.toLowerCase())
+        )
+      );
 
   if (error) return <p>{error}</p>;
   return (
@@ -36,6 +50,8 @@ function InventoryList() {
               className="inventory-details-list__search"
               type="search"
               placeholder="Search..."
+              value={query}
+              onChange={handleQuery}
             />
             <button
               onClick={() => {
@@ -123,7 +139,7 @@ function InventoryList() {
         </section>
         <div className="growth">
           {inventories &&
-            inventories.map((inventory) => {
+            filteredInventories.map((inventory) => {
               return <AnimatedInventoryItem key={inventory.id} inventory={inventory} />;
             })}
         </div>

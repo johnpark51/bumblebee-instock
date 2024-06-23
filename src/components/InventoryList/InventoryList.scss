@@ -65,6 +65,9 @@
     &:focus {
       border: 1px solid $Instock-Indigo;
     }
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
     @include tablet() {
       height: 2.5rem;
       margin-right: 1rem;
