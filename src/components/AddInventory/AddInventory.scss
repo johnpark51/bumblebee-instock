@@ -112,6 +112,7 @@
 
             @include desktop {
                 width: 36.25%;
+                max-width: 460px;
             }
         }
 
@@ -201,6 +202,7 @@
         background-color: $Light-Grey;
         justify-content: space-between;
 
+
         @include tablet {
             justify-content: flex-end;
         }
@@ -224,6 +226,7 @@
         border: 1px solid $Cloud;
         background-color: $White;
         width: 100%;
+        cursor: pointer;
         
 
         @include tablet {
