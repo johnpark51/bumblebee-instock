@@ -1,12 +1,14 @@
 import "./AddWarehouse.scss";
+import toast, { Toaster } from "react-hot-toast";
 import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { createPortal } from "react-dom";
 
 function AddWarehouse() {
-  const navigation = useNavigate();
 
+  const navigation = useNavigate();
   const inputWarehouse = useRef("");
   const inputAddress = useRef("");
   const inputCity = useRef("");
@@ -50,8 +52,18 @@ function AddWarehouse() {
 			contact_email: inputEmail.current.value.trim(" "),
 		  };
 		  axios.post("http://localhost:8080/api/warehouses", updatedWarehouse);
-      navigation("/")
+      toast.success(`Created: ${inputWarehouse.current.value} 🚀`, {
+        style: {
+          borderRadius: '50px',
+          backgroundColor: '#2E66E5',
+          color: '#FFFFFF'
+        }
+      });
+      event.target.closest("form").reset();
 	} else {
+    toast(`Uh, oh! Could not complete`, {
+        icon: '😬'
+      });
 		return false;
 	}
       };
@@ -62,6 +74,10 @@ function AddWarehouse() {
   }
 
   return (
+    <>
+    {createPortal(
+      <Toaster position="top-right" />, document.body
+    )}
     <form onSubmit={postWarehouse} className="add-warehouse" data-aos="fade-up">
       <section className="add-warehouse__top">
         <Link  className="add-warehouse__link" to="/">
@@ -169,6 +185,7 @@ function AddWarehouse() {
         </button>
       </section>
     </form>
+    </>
   );
 }
 

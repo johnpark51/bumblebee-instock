@@ -17,7 +17,7 @@ function InventoryItem({
     navigation(`/inventory/edit/${id}`);
   };
   return (
-    <div>
+    <>
       {createPortal(
       <DeleteInventory
         id={id}
@@ -144,7 +144,7 @@ function InventoryItem({
           <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>
-    </div>
+    </>
   );
 }
 

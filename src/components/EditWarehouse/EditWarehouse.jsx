@@ -1,4 +1,6 @@
 import "./EditWarehouse.scss";
+import toast, { Toaster } from "react-hot-toast";
+import { createPortal } from "react-dom";
 import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -63,7 +65,13 @@ function EditWarehouse() {
 			contact_email: inputEmail.current.value,
 		};
 		axios.put(`http://localhost:8080/api/warehouses/${id}`, updatedWarehouse);
-    navigation("/");
+      toast.success(`Updated: ${inputWarehouse.current.value} 🚀`, {
+        style: {
+          borderRadius: '50px',
+          backgroundColor: '#2E66E5',
+          color: '#FFFFFF'
+        }
+      });
 	};
 
   function handleCancel() {
@@ -74,6 +82,10 @@ function EditWarehouse() {
 
   if (warehouse)
 	return (
+    <>
+    {createPortal(
+    <Toaster position="top-right"/>, document.body
+    )}
 		<form onSubmit={putWarehouse} className="edit-warehouse" data-aos="fade-up">
 			<section className="edit-warehouse__top">
 				<Link to="/"><img className="edit-warehouse__arrow" src={arrowLeft}></img></Link>
@@ -159,6 +171,7 @@ function EditWarehouse() {
 				</button>
 			</section>
 		</form>
+    </>
 	)
 }
 

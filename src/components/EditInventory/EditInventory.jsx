@@ -1,4 +1,6 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { createPortal } from "react-dom";
 import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import "./EditInventory.scss";
@@ -73,8 +75,20 @@ export default function EditInventory() {
 
     axios
       .put(`http://localhost:8080/api/inventories/${id}`, updatedInventory)
-      .then(() => navigate("/inventory"))
-      .catch((err) => console.error(err));
+      .then(() => {
+      toast.success(`Updated: ${formData.item_name} 🚀`, {
+        style: {
+          borderRadius: '50px',
+          backgroundColor: '#2E66E5',
+          color: '#FFFFFF'
+        }
+      })
+      })
+      .catch((err) => {
+    toast(`Uh, oh! ${err}`, {
+        icon: '😬'
+    });
+    });
   };
 
   if (error) return <p>{error}</p>;
@@ -83,6 +97,10 @@ export default function EditInventory() {
   if (!inventory) return <p>Loading...</p>;
 
   return (
+    <>
+    {createPortal(
+    <Toaster position="top-right"/>, document.body
+    )}
     <form className="form-edit" onSubmit={putInventory} data-aos="fade-up">
       <header className="form-edit__header">
         <Link to="/inventory">
@@ -238,5 +256,6 @@ export default function EditInventory() {
         </div>
       </section>
     </form>
+    </>
   );
 };
