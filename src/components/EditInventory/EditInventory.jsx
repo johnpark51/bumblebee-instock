@@ -9,7 +9,7 @@ import useInventory from "@/utils/hooks/useInventory.js";
 
 export default function EditInventory() {
   const { id } = useParams();
-  const { warehouses } = useWarehouses();
+  const { warehouses, warehouseError } = useWarehouses();
   const { inventory, error } = useInventory(id);
   const navigate = useNavigate();
   const item_name = useRef();
@@ -78,6 +78,7 @@ export default function EditInventory() {
   };
 
   if (error) return <p>{error}</p>;
+  if (warehouseError) return <p>{warehouseError}</p>;
 
   if (!inventory) return <p>Loading...</p>;
 
@@ -207,7 +208,7 @@ export default function EditInventory() {
                 onChange={handleWarehouseChange}
                 required
               >
-                {warehouses.map((warehouse) => (
+                {warehouses && warehouses.map((warehouse) => (
                   <option
                     className="form-edit__option"
                     key={warehouse.id}
@@ -238,4 +239,4 @@ export default function EditInventory() {
       </section>
     </form>
   );
-}
+};
