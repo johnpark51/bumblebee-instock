@@ -49,7 +49,7 @@ function AddWarehouse() {
 			contact_phone: phoneNumber.trim(" "),
 			contact_email: inputEmail.current.value.trim(" "),
 		  };
-		  axios.post("http://localhost:8080/warehouses", updatedWarehouse);
+		  axios.post("http://localhost:8080/api/warehouses", updatedWarehouse);
       navigation("/")
 	} else {
 		return false;

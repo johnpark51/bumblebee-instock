@@ -15,7 +15,7 @@ function WarehouseDetailsListItem({
   const [openModal, setOpenModal] = useState(false);
 
   function handleEdit() {
-    navigate(`/warehouse/edit/${id}`);
+    navigate(`/inventory/edit/${id}`);
   }
 
   return (
