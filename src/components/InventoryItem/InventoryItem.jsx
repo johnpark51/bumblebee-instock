@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
 import "./InventoryItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
 import editIcon from "@/assets/Icons/edit-24px.svg";
@@ -17,12 +18,14 @@ function InventoryItem({
   };
   return (
     <div>
+      {createPortal(
       <DeleteInventory
         id={id}
         item_name={item_name}
         open={openModal}
         onClose={() => setOpenModal(false)}
-      />
+      />, document.body
+      )}
       <article className="inventory-details-item">
         <div className="inventory-details-item__container--inventory">
           <Link
