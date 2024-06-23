@@ -29,7 +29,7 @@ function WarehouseList() {
   if (error) return <p>{error}</p>;
 
   return (
-    <section className="warehouse-list">
+    <section className="warehouse-list" data-aos="fade-up">
       <div className="warehouse-list__top">
         <div className="warehouse-list__top--left">
           <h1 className="warehouse-list__header">warehouses</h1>

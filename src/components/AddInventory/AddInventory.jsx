@@ -41,7 +41,7 @@ export default function AddInventory() {
 
   return (
     <>
-      <form onSubmit={onSubmit} className="form">
+      <form onSubmit={onSubmit} className="form" data-aos="fade-up">
         <header className="form__header">
           <Link className="form__back" to="/inventory">
             <img className="form__arrow" src={arrow} alt="<" />

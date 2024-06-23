@@ -16,7 +16,7 @@ function InventoryItem({
     navigation(`/inventory/edit/${id}`);
   };
   return (
-    <>
+    <div>
       <DeleteInventory
         id={id}
         item_name={item_name}
@@ -141,7 +141,7 @@ function InventoryItem({
           <img className="inventory-item__icon" src={editIcon} alt="edit" />
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

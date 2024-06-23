@@ -62,7 +62,7 @@ function AddWarehouse() {
   }
 
   return (
-    <form onSubmit={postWarehouse} className="add-warehouse">
+    <form onSubmit={postWarehouse} className="add-warehouse" data-aos="fade-up">
       <section className="add-warehouse__top">
         <Link  className="add-warehouse__link" to="/">
           <img className="add-warehouse__arrow" src={arrowLeft}></img>

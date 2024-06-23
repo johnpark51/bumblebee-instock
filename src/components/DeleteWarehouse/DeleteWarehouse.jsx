@@ -10,7 +10,7 @@ function DeleteWarehouse({ open, onClose, id, warehouse_name }) {
 	if (!open) return null;
 
 	return (
-		<div onSubmit={deleteWarehouse} onClick={onClose} className="overlay">
+		<div onSubmit={deleteWarehouse} onClick={onClose} className="overlay" data-aos="fade-down">
 			<form
 				onClick={(e) => {
 					e.stopPropagation();

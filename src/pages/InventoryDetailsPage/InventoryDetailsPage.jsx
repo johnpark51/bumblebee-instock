@@ -13,7 +13,7 @@ function InventoryDetailsPage() {
 	return (
 		<>
 			<Header />
-			<main className="inventory-details__main">
+			<main className="inventory-details__main" data-aos="fade-up">
 				{inventory && <InventoryDetails inventory={inventory}/>}
 			</main>
 			<Footer />

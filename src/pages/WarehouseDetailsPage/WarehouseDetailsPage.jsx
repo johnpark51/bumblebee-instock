@@ -15,7 +15,7 @@ function WarehouseDetailsPage() {
   return (
     <>
       <Header />
-      <main className="warehouse-details-main">
+      <main className="warehouse-details-main" data-aos="fade-up">
         { warehouse && <WarehouseDetailsList warehouse={warehouse} /> }
       </main>
       <Footer />

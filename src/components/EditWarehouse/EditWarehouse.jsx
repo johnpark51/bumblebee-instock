@@ -74,7 +74,7 @@ function EditWarehouse() {
 
   if (warehouse)
 	return (
-		<form onSubmit={putWarehouse} className="edit-warehouse">
+		<form onSubmit={putWarehouse} className="edit-warehouse" data-aos="fade-up">
 			<section className="edit-warehouse__top">
 				<Link to="/"><img className="edit-warehouse__arrow" src={arrowLeft}></img></Link>
 				<h1 className="edit-warehouse__title">Edit Warehouse</h1>

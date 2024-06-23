@@ -82,7 +82,7 @@ export default function EditInventory() {
   if (!inventory) return <p>Loading...</p>;
 
   return (
-    <form className="form-edit" onSubmit={putInventory}>
+    <form className="form-edit" onSubmit={putInventory} data-aos="fade-up">
       <header className="form-edit__header">
         <Link to="/inventory">
           <img className="form-edit__arrow" src={arrow} alt="<" />

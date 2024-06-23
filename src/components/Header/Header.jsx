@@ -6,10 +6,10 @@ export default function Header() {
   return (
     <header className="header">
       <section className="header__block">
-        <Link to="/">
+        <Link to="/" data-aos="fade-down">
           <img className="header__logo" src={logo} alt="Instock" />
         </Link>
-        <div className="header__nav">
+        <div className="header__nav" data-aos="fade-down">
           <NavLink className="header__link" to="/">
             <h3>Warehouses</h3>
           </NavLink>
