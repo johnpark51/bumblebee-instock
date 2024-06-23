@@ -30,7 +30,7 @@ function WarehouseDetailsListItem({
         <div className="warehouse-details-item__container--warehouse">
           <Link
             className="warehouse-details-item__link"
-            to={`/inventory/edit/${id}`}
+            to={`/inventory/${id}`}
           >
             <h3 className="warehouse-details-item__header--tb warehouse-details-item__header-link">
               {item_name}{" "}
