@@ -3,6 +3,12 @@
 @use "@/styles/partials/mixins" as *;
 
 .warehouse-details-item {
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    transition: all 0.15s ease-in-out;
+    background-color: $Light-Grey;
+  }
   &__link {
     text-decoration: none;
   }
@@ -18,12 +24,8 @@
     gap: 0;
   }
   &__header-link {
-    transition: all 0.15s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    &:hover {
-      color: $Graphite;
-    }
   }
   &__header {
     font-size: 0.688rem;
@@ -40,6 +42,15 @@
       line-height: 1.25rem;
       cursor: pointer;
       text-decoration: none;
+      .warehouse-item__icon {
+        transition: all 0.15s ease-in-out;
+      }
+      &:hover {
+        .warehouse-item__icon {
+          transition: all 0.15s ease-in-out;
+          margin-left: 0.25rem;
+        }
+      }
     }
     &--tb {
       display: none;
@@ -50,6 +61,15 @@
       @include tablet() {
         display: flex;
         text-decoration: none;
+      }
+      .warehouse-item__icon {
+        transition: all 0.15s ease-in-out;
+      }
+      &:hover {
+        .warehouse-item__icon {
+          transition: all 0.15s ease-in-out;
+          margin-left: 0.25rem;
+        }
       }
     }
   }

@@ -3,6 +3,12 @@
 @use "@/styles/partials/mixins" as *;
 
 .inventory-details-item {
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    transition: all 0.15s ease-in-out;
+    background-color: $Light-Grey;
+  }
   display: flex;
   padding: 1rem 1rem;
   align-items: flex-start;
@@ -19,15 +25,6 @@
       margin: auto 2rem auto 0;
     }
   }
-
-  &__header-link {
-    transition: all 0.15s ease-in-out;
-    
-    cursor: pointer;
-    &:hover {
-      color: $Graphite;
-    }
-  }
   &__header {
     font-size: 0.688rem;
     color: $Slate;
@@ -42,6 +39,15 @@
       font-size: 0.813rem;
       line-height: 1.25rem;
       cursor: pointer;
+      .inventory-item__icon {
+        transition: all 0.15s ease-in-out;
+      }
+      &:hover {
+        .inventory-item__icon {
+          transition: all 0.15s ease-in-out;
+          margin-left: 0.25rem;
+        }
+      }
     }
     &--tb {
       display: none;
@@ -49,9 +55,17 @@
       font-size: 0.813rem;
       line-height: 1.25rem;
       text-decoration: none;
-      
       @include tablet() {
         display: flex;
+        .inventory-item__icon {
+          transition: all 0.15s ease-in-out;
+        }
+        &:hover {
+          .inventory-item__icon {
+            transition: all 0.15s ease-in-out;
+            margin-left: 0.25rem;
+          }
+        }
       }
     }
 

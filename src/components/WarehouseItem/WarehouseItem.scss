@@ -3,6 +3,12 @@
 @use "@/styles/partials/mixins" as *;
 
 .warehouse-item {
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    transition: all 0.15s ease-in-out;
+    background-color: $Light-Grey;
+  }
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -26,6 +32,15 @@
       font-size: 0.813rem;
       line-height: 1.25rem;
       text-decoration: none;
+      .warehouse-item__icon {
+        transition: all 0.15s ease-in-out;
+      }
+      &:hover {
+        .warehouse-item__icon {
+          transition: all 0.15s ease-in-out;
+          margin-left: 0.25rem;
+        }
+      }
     }
     &--tb {
       display: none;
@@ -35,6 +50,15 @@
       text-decoration: none;
       @include tablet() {
         display: flex;
+        .warehouse-item__icon {
+          transition: all 0.15s ease-in-out;
+        }
+        &:hover {
+          .warehouse-item__icon {
+            transition: all 0.15s ease-in-out;
+            margin-left: 0.25rem;
+          }
+        }
       }
     }
   }
