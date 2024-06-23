@@ -1,6 +1,6 @@
 import "./EditWarehouse.scss";
 import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import useWarehouse from "@/utils/hooks/useWarehouse.js";
 import axios from "axios";
@@ -18,6 +18,19 @@ function EditWarehouse() {
 	const inputPosition = useRef();
 	const [phoneNumber, setPhoneNumber] = useState("");
 	const inputEmail = useRef();
+
+	useEffect(() => {
+		if (warehouse) {
+			setPhoneNumber(warehouse.contact_phone)
+		inputWarehouse.current.value = warehouse.warehouse_name
+		inputAddress.current.value = warehouse.address
+		inputCity.current.value = warehouse.city
+		inputCountry.current.value = warehouse.country
+		inputContact.current.value = warehouse.contact_name
+		inputPosition.current.value = warehouse.contact_position
+		inputEmail.current.value = warehouse.contact_email
+		}
+	}, [warehouse])
 
 	const formatPhoneNumber = (phoneNumber) => {
 		const cleaned = ("" + phoneNumber).replace(/\D/g, "");
@@ -53,8 +66,7 @@ function EditWarehouse() {
     navigation("/");
 	};
 
-  function handleCancel(e) {
-    // e.preventDefault();
+  function handleCancel() {
     navigation("/");
   };
 
@@ -135,8 +147,8 @@ function EditWarehouse() {
 				</section>
 			</section>
 			<section className="edit-warehouse__buttons">
-				<button onClick={(e) => {
-          handleCancel(e)
+				<button onClick={() => {
+          handleCancel()
         }} className="edit-warehouse__button edit-warehouse__button--cancel">
 					Cancel
 				</button>
