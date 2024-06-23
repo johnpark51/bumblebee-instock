@@ -63,10 +63,15 @@
         }
     }
     &__button {
+        cursor: pointer;
         width: 48%;
         height: 2.25rem;
         border-radius: 1.25rem;
         border: 0;
+        transition: all 0.15s ease-in-out;
+        &:hover {
+          background-color: $Light-Grey;
+        }
         @include tablet {
             width: 15%;
             max-width: 4rem;
