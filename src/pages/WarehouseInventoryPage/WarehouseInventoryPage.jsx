@@ -1,11 +1,11 @@
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer'
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer'
 import './WarehouseInventoryPage.scss';
-import arrow from '../../assets/Icons/arrow_back-24px.svg';
-import edit from '../../assets/Icons/edit-24px.svg'
-import chevron from '../../assets/Icons/chevron_right-24px.svg';
-import del from '../../assets/Icons/delete_outline-24px.svg';
-import sort from '../../assets/Icons/sort-24px.svg'
+import arrow from '@/assets/Icons/arrow_back-24px.svg';
+import edit from '@/assets/Icons/edit-24px.svg'
+import chevron from '@/assets/Icons/chevron_right-24px.svg';
+import del from '@/assets/Icons/delete_outline-24px.svg';
+import sort from '@/assets/Icons/sort-24px.svg'
 
 export default function WarehouseInventoryPage() {
     return (

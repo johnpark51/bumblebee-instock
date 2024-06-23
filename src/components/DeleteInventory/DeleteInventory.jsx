@@ -10,7 +10,7 @@ function DeleteInventory({ open, onClose, id, item_name }) {
 	if (!open) return null;
 
 	return (
-		<div onSubmit={deleteInventory} onClick={onClose} className="overlay">
+		<div onSubmit={deleteInventory} onClick={onClose} className="overlay" data-aos="fade-down">
 			<form
 				onClick={(e) => {
 					e.stopPropagation();

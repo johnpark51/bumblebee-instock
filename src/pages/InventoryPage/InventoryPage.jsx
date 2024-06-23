@@ -8,7 +8,7 @@ function InventoryPage() {
   return (
     <>
       <Header />
-      <main className="inventorypage-main">
+      <main className="inventorypage-main" data-aos="fade-up">
         <InventoryList />
       </main>
       <Footer />

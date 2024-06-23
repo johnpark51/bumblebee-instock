@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./AddInventory.scss";
-import arrow from "../../assets/Icons/arrow_back-24px.svg";
-import drop from "../../assets/Icons/arrow_drop_down-24px.svg";
+import arrow from "@/assets/Icons/arrow_back-24px.svg";
+import drop from "@/assets/Icons/arrow_drop_down-24px.svg";
 import axios from "axios";
 import useWarehouse from "@/utils/hooks/useWarehouses.js";
 
@@ -37,9 +37,11 @@ export default function AddInventory() {
     }
   };
 
+  if (error) <p>{error}</p>
+
   return (
     <>
-      <form onSubmit={onSubmit} className="form">
+      <form onSubmit={onSubmit} className="form" data-aos="fade-up">
         <header className="form__header">
           <Link className="form__back" to="/inventory">
             <img className="form__arrow" src={arrow} alt="<" />

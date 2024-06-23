@@ -1,5 +1,5 @@
 import "./AddWarehouse.scss";
-import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
+import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -62,7 +62,7 @@ function AddWarehouse() {
   }
 
   return (
-    <form onSubmit={postWarehouse} className="add-warehouse">
+    <form onSubmit={postWarehouse} className="add-warehouse" data-aos="fade-up">
       <section className="add-warehouse__top">
         <Link  className="add-warehouse__link" to="/">
           <img className="add-warehouse__arrow" src={arrowLeft}></img>

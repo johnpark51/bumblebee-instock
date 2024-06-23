@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 import "./WarehouseItem.scss";
 import deleteIcon from "@/assets/Icons/delete_outline-24px.svg";
@@ -28,13 +29,15 @@ function WarehouseItem({
 	}
 
 	return (
-		<>
+		<div>
+      {createPortal(
 			<DeleteWarehouse
 				id={id}
 				warehouse_name={warehouse_name}
 				open={openModal}
 				onClose={() => setOpenModal(false)}
-			/>
+			/>, document.body
+      )}
 			<article className="warehouse-item">
 				<div className="warehouse-item__container--warehouse">
 					<Link to={`/warehouse/${id}`} className="warehouse-item__header--tb">
@@ -131,7 +134,7 @@ function WarehouseItem({
 					<img className="warehouse-item__icon" src={editIcon} alt="edit" />
 				</button>
 			</div>
-		</>
+		</div>
 	);
 }
 
