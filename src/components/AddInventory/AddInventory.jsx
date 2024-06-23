@@ -1,4 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { createPortal } from "react-dom";
 import { useState } from "react";
 import "./AddInventory.scss";
 import arrow from "@/assets/Icons/arrow_back-24px.svg";
@@ -7,7 +9,6 @@ import axios from "axios";
 import useWarehouse from "@/utils/hooks/useWarehouses.js";
 
 export default function AddInventory() {
-  const navigate = useNavigate();
 
   const { warehouses, error } = useWarehouse();
   const [formData, setFormData] = useState({
@@ -30,17 +31,35 @@ export default function AddInventory() {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
+      setFormData({
+        warehouse_id: null,
+        item_name: "",
+        description: "",
+        category: "",
+        status: "",
+        quantity: 0,
+      });
+      e.target.closest("form").reset();
       await axios.post("http://localhost:8080/api/inventories", formData);
-      navigate("/inventory");
+      toast.success(`Created: ${formData.item_name} 🚀`, {
+        style: {
+          borderRadius: '50px',
+          backgroundColor: '#2E66E5',
+          color: '#FFFFFF'
+        }
+      });
     } catch (error) {
-      console.error(error);
-    }
+      toast.error(`Uh, oh! ${error}`);
+    };
   };
 
   if (error) <p>{error}</p>
 
   return (
     <>
+      {createPortal(
+        <Toaster position="top-right" />, document.body
+      )}
       <form onSubmit={onSubmit} className="form" data-aos="fade-up">
         <header className="form__header">
           <Link className="form__back" to="/inventory">
