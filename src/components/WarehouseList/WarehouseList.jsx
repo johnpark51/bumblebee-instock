@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./WarehouseList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 
-import WarehouseItem from "@/components/WarehouseItem/WarehouseItem";
+import AnimatedWarehouseItem from "@/components/WarehouseItem/AnimatedWarehouseItem";
 
 function WarehouseList() {
   const [sort, setSort] = useState({ sort: "name", asc: "asc" });
@@ -96,7 +96,7 @@ function WarehouseList() {
 
       {warehouses &&
         warehouses.map((warehouse) => {
-          return <WarehouseItem key={warehouse.id} warehouse={warehouse} />;
+          return <AnimatedWarehouseItem key={warehouse.id} warehouse={warehouse} />;
         })}
     </section>
   );

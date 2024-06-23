@@ -4,7 +4,7 @@ import "./WarehouseDetailsList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 import arrowBackIcon from "@/assets/Icons/arrow_back-24px.svg";
 
-import WarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/WarehouseDetailsListItem";
+import AnimatedWarehouseDetailsListItem from "@/components/WarehouseDetailsListItem/AnimatedWarehouseDetailsListItem";
 import EditIcon from "@/components/Icons/EditIcon";
 
 function WarehouseDetailsList({
@@ -139,7 +139,7 @@ function WarehouseDetailsList({
 				</section>
 
 				{inventories.map((item) => {
-					return <WarehouseDetailsListItem key={item.id} item={item} />;
+					return <AnimatedWarehouseDetailsListItem key={item.id} item={item} />;
 				})}
 			</section>
 		</>

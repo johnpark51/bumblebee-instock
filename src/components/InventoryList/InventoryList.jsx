@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./InventoryList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";
 
-import InventoryItem from "@/components/InventoryItem/InventoryItem";
+import AnimatedInventoryItem from "@/components/InventoryItem/AnimatedInventoryItem";
 
 function InventoryList() {
   const [sort, setSort] = useState({ sort: "name", asc: "asc" });
@@ -124,7 +124,7 @@ function InventoryList() {
         <div className="growth">
           {inventories &&
             inventories.map((inventory) => {
-              return <InventoryItem key={inventory.id} inventory={inventory} />;
+              return <AnimatedInventoryItem key={inventory.id} inventory={inventory} />;
             })}
         </div>
       </section>
