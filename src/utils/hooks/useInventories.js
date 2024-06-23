@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import api from "@/utils/api/api.js";
 
-const useInventories = () => {
+const useInventories = (sort, asc) => {
   const [inventories, setInventories] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getInventories();
-  }, []);
+    getInventories(sort, asc);
+  }, [sort, asc]);
 
-  const getInventories = async () => {
+  const getInventories = async (sort, asc) => {
     try {
-      const inventories = await api.getInventories();
+      const inventories = await api.getInventories(sort, asc);
       setInventories(inventories);
     } catch (e) {
       setError(e.message);

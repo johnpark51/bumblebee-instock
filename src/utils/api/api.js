@@ -11,8 +11,8 @@ class Api {
     });
   }
 
-  async getWarehouses() {
-    const route = "/warehouses";
+  async getWarehouses(sort_by, asc) {
+    const route = `/warehouses?sort_by=${sort_by}&order_by=${asc}`;
     try {
       const res = await this.api.get(route);
       return res.data;
@@ -41,8 +41,8 @@ class Api {
     }
   }
 
-  async getInventories() {
-    const route = "/inventories";
+  async getInventories(sort_by, asc) {
+    const route = `/inventories?sort_by=${sort_by}&order_by=${asc}`;
     try {
       const res = await this.api.get(route);
       return res.data;
