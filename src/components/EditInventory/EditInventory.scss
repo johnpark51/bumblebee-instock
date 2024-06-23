@@ -228,6 +228,7 @@
     border: 1px solid $Cloud;
     background-color: $White;
     width: 47.5%;
+    cursor: pointer;
 
     @include tablet {
       width: 40%;

@@ -197,7 +197,7 @@ export default function AddInventory() {
         </main>
         <section className="form__buttons">
           <div className="form__container">
-            <Link className="form__cancel" to="/">
+            <Link className="form__cancel" to="/inventory">
               <button className="form__button">Cancel</button>
             </Link>
             <button
