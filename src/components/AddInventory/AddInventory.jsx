@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./AddInventory.scss";
-import arrow from "../../assets/Icons/arrow_back-24px.svg";
-import drop from "../../assets/Icons/arrow_drop_down-24px.svg";
+import arrow from "@/assets/Icons/arrow_back-24px.svg";
+import drop from "@/assets/Icons/arrow_drop_down-24px.svg";
 import axios from "axios";
 import useWarehouse from "@/utils/hooks/useWarehouses.js";
 
@@ -36,6 +36,8 @@ export default function AddInventory() {
       console.error(error);
     }
   };
+
+  if (error) <p>{error}</p>
 
   return (
     <>

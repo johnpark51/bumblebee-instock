@@ -1,5 +1,5 @@
 import useInventories from "@/utils/hooks/useInventories";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./InventoryList.scss";
 import sortIcon from "@/assets/Icons/sort-24px.svg";

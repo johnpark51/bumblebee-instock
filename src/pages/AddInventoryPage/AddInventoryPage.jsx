@@ -1,6 +1,6 @@
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import AddInventory from '../../components/AddInventory/AddInventory'
+import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer/Footer'
+import AddInventory from '@/components/AddInventory/AddInventory'
 import './AddInventoryPage.scss';
 
 export default function AddInventoryPage() {

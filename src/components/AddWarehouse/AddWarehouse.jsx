@@ -1,5 +1,5 @@
 import "./AddWarehouse.scss";
-import arrowLeft from "../../assets/Icons/arrow_back-24px.svg";
+import arrowLeft from "@/assets/Icons/arrow_back-24px.svg";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
